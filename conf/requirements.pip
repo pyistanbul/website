@@ -1,2 +1,4 @@
+markdown==2.3.1
 django==1.5.1
 django-gravatar==0.1.0
+django-markitup==1.0.0

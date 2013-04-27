@@ -7,7 +7,7 @@ class Presentation(models.Model):
     owner = models.CharField(max_length=255)
     date = models.DateField()
     link = models.URLField()
-    description = models.TextField()
+    description = models.TextField(blank=True)
 
     class Meta:
         ordering = ['-date']
