@@ -144,8 +144,9 @@ nav a {
 }
 
 #github a {
-    color: #4691d0;
+    color: #3e82ba;
     font-size: 20px;
+    text-decoration: none;
 }
 
 /* ===============
