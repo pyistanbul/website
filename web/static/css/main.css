@@ -133,6 +133,21 @@ nav a {
     margin: 3px 0;
 }
 
+#github {
+    background: url(../images/octocat.jpg) no-repeat left -70px;
+    float: right;
+    width: 510px;
+    padding-top: 10px;
+    text-align: right;
+    margin-top: -20px;
+    height: 95px;
+}
+
+#github a {
+    color: #4691d0;
+    font-size: 20px;
+}
+
 /* ===============
     ALL: IE Fixes
    =============== */
