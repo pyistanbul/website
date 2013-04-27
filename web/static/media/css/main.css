@@ -126,6 +126,43 @@ header h1#logo {
     text-indent: -99999px;
 }
 
+.presentations ul {
+    background: white;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #d1d1d1;
+}
+
+.presentations ul li {
+    margin: 20px;
+    list-style: none;
+}
+
+.presentations ul li a {
+    color: #4691d0;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.presentations ul li a span {
+    color: gray;
+    display: block;
+}
+
+.presentations h3 {
+    color: gray;
+    padding: 10px 20px;
+    font-size: 20px;
+    float: left;
+    margin: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
 
 .header-container,
 .main aside {
@@ -249,7 +286,7 @@ form label {
     padding-top: 5px;
 }
 
-form input {
+form input, form textarea {
     padding: 7px 4px;
 }
 

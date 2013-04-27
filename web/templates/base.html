@@ -29,9 +29,9 @@
         <h1 id="logo" class="title">Python Istanbul</h1>
         <nav>
             <ul>
-                <li><a href="#">sunumlar</a></li>
+                <li><a href="{% url "presentations:index" %}">sunumlar</a></li>
                 <li><a href="{% url "people:index" %}">insanlar</a></li>
-                <li><a href="#">iş ilanları</a></li>
+                <li><a href="{% url "jobs:index" %}">iş ilanları</a></li>
             </ul>
         </nav>
     </header>

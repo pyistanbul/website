@@ -9,5 +9,8 @@ class Presentation(models.Model):
     link = models.URLField()
     description = models.TextField()
 
+    class Meta:
+        ordering = ['-date']
+
     def __unicode__(self):
         return smart_unicode(self.title)
