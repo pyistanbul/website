@@ -17,7 +17,7 @@ class Job(models.Model):
     title = models.CharField(max_length=255)
     company = models.ForeignKey(Company, related_name="jobs")
     description = models.TextField()
-    location = models.CharField()
+    location = models.CharField(max_length=255)
 
     def __unicode__(self):
         return smart_unicode(self.name)

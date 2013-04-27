@@ -1,0 +1,2 @@
+django==1.5.1
+django-gravatar==0.1.0

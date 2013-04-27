@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form action="{% url "people:new" %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <footer>
+        <input type="submit" value="Ekle">
+    </footer>
+    </form>
+
+{% endblock %}

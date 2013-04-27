@@ -1,72 +1,21 @@
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="Python Istanbul">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="../static/media/css/normalize.min.css">
-    <link rel="stylesheet" href="../static/media/css/main.css">
-    <!--[if lt IE 9]>
-    <script src="../static/media/js/html5shiv.js"></script>
-    <![endif]-->
-</head>
-<body>
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an outdated browser.
-    <a href="http://browsehappy.com/">Upgrade your browser today</a>
-    or <a href="http://www.google.com/chromeframe/?redirect=true">install
-        Google Chrome Frame</a> to better experience this site.</p>
-<![endif]-->
-
-<div class="header-container">
-    <header class="wrapper clearfix">
-        <h1 id="logo" class="title">Python Istanbul</h1>
-        <nav>
-            <ul>
-                <li><a href="#">sunumlar</a></li>
-                <li><a href="#">insanlar</a></li>
-                <li><a href="#">iş ilanları</a></li>
-            </ul>
-        </nav>
+{% block content %}
+<article>
+    <header>
+        <h2>Python Istanbul web sitesini yeniledik</h2>
     </header>
-</div>
+</article>
 
-<div class="main-container">
-    <div class="main wrapper clearfix">
-
-        <article>
-            <header>
-                <h2>Python Istanbul web sitesini yeniledik</h2>
-            </header>
-        </article>
-
-        <aside>
-            <h3>Nasıl katılabilirim?</h3>
-            <p>Python Istanbul bir dernek değil, topluluktur.
-                Toplantılara gelmek için bir yere kayıt olmanıza gerek yok.</p>
-            <h3>Nasıl iletişim kurabilirim?</h3>
-            <p>Hergün freenode üzerinde #pyistanbul kanalında buluşuyoruz.</p>
-            <h3>Desteğe ihtiyacım var</h3>
-            <p>IRC kanalı üzerinden ya da mail python-istanbul mail grubu
-            üzerinden sorularınızı sorabilirsiniz.</p>
-            <p><a href="http://groups.google.com/group/python-istanbul">Kaydolmak için tıklayın</a></p>
-        </aside>
-
-    </div> <!-- #main -->
-</div> <!-- #main-container -->
-
-<div class="footer-container">
-    <footer class="wrapper">
-        <h3>#pyistanbul at freenode</h3>
-    </footer>
-</div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-</body>
-</html>
+<aside>
+    <h3>Nasıl katılabilirim?</h3>
+    <p>Python Istanbul bir dernek değil, topluluktur.
+        Toplantılara gelmek için bir yere kayıt olmanıza gerek yok.</p>
+    <h3>Nasıl iletişim kurabilirim?</h3>
+    <p>Hergün freenode üzerinde #pyistanbul kanalında buluşuyoruz.</p>
+    <h3>Desteğe ihtiyacım var</h3>
+    <p>IRC kanalı üzerinden ya da mail python-istanbul mail grubu
+        üzerinden sorularınızı sorabilirsiniz.</p>
+    <p><a href="http://groups.google.com/group/python-istanbul">Kaydolmak için tıklayın</a></p>
+</aside>
+{% endblock %}
