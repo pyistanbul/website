@@ -65,6 +65,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
+    'gravatar',
+
     'blog',
     'jobs',
     'people',

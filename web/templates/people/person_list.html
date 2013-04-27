@@ -1,9 +1,25 @@
 {% extends "base.html" %}
 
+{% load gravatar_tags %}
+
 {% block content %}
 
     <div class="buttons">
         <a href="{% url "people:new" %}">Yeni Kişi Ekle</a>
     </div>
+
+    <ul class="people">
+    {% for person in person_list %}
+        <li>
+            <img src="{% gravatar_for_email person.email 100 %}" alt="{{ person.name }}">
+            <p>
+                <strong>{{ person.name }}</strong>
+                <a href="http://twitter.com/{{ person.twitter_username }}">Twitter</a>
+                <a href="http://github.com/{{ person.github_username }}">Github</a>
+                <a href="{{ person.blog_link }}">Blog</a>
+            </p>
+        </li>
+    {% endfor %}
+    </ul>
 
 {% endblock %}

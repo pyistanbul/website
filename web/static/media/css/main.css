@@ -119,11 +119,10 @@ nav a {
     padding-top: 20px;
 }
 
-
 header h1#logo {
     background: url(../images/logo.png) no-repeat;
-    width: 337px;
-    height: 86px;
+    width: 340px;
+    height: 91px;
     text-indent: -99999px;
 }
 
@@ -154,6 +153,122 @@ nav ul li {
     width: 28%;
 }
 
+.buttons {
+    margin: 0 0 20px;
+}
+
+.buttons a, .button {
+    -moz-box-shadow:inset 0 1px 0 0 #ffffff;
+    -webkit-box-shadow:inset 0 1px 0 0 #ffffff;
+    box-shadow:inset 0 1px 0 0 #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom,
+                                color-stop(0.05, #ffffff),
+                                color-stop(1, #f6f6f6));
+    background:-moz-linear-gradient(center top, #ffffff 5%, #f6f6f6 100% );
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#666666;
+    font-size:15px;
+    font-weight:bold;
+    padding:10px 24px;
+    text-decoration:none;
+    text-shadow:1px 1px 0 #ffffff;
+}
+
+.buttons a:hover, .button:hover {
+     background:-webkit-gradient(linear, left top, left bottom,
+                                 color-stop(0.05, #f6f6f6),
+                                 color-stop(1, #ffffff) );
+     background:-moz-linear-gradient(center top, #f6f6f6 5%, #ffffff 100%);
+     background-color:#f6f6f6;
+}
+
+.buttons a:active, .button:active {
+    position:relative;
+    top:1px;
+}
+
+ul.people {
+    margin: 0;
+    padding: 0;
+}
+
+ul.people li {
+    float: left;
+    width: 300px;
+    height: 130px;
+    background: white;
+    list-style: none;
+    padding: 0;
+    margin: 0 20px 15px 0;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px #d1d1d1;
+}
+
+ul.people li img {
+    float: left;
+    width: 130px;
+    height: 130px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+ul.people li p {
+    width: 130px;
+    float: left;
+    margin: 10px;
+    padding: 0;
+    font-size: 22px;
+}
+
+ul.people li p strong {
+    width: 100%;
+    display: block;
+}
+
+ul.people li p a {
+    display: block;
+    color: #4994cf;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: -6px;
+}
+
+form {
+}
+
+form label {
+    display: block;
+    float: left;
+    width: 120px;
+    color: #303030;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+form input {
+    padding: 7px 4px;
+}
+
+form footer {
+    margin-left: 125px;
+}
+
+form .line {
+    margin-bottom: 20px;
+}
+
+form .help {
+    color: gray;
+    margin: 0 0 0 120px;
+}
+
+ul.people li p a:hover {
+    color: #252525;
+}
 
 .wrapper {
     width: 960px;

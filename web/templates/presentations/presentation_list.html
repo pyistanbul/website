@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load gravatar_tags %}
+
+{% block content %}
+
+    <ul class="presentations">
+        {% for presentation in presentation_list %}
+            <li>
+                {{ presentation }}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,12 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <h3>Yeni kişi</h3>
     <form action="{% url "people:new" %}" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% for field in form %}
+        <div class="line">
+            {{ field.errors }}
+            {{ field.label_tag }}
+            <div class="field">
+                {{ field }}
+                <p class="help">{{ field.help_text }}</p>
+            </div>
+        </div>
+    {% endfor %}
     <footer>
-        <input type="submit" value="Ekle">
+        <input class="button" type="submit" value="Kaydet">
     </footer>
     </form>
 
