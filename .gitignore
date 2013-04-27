@@ -1,6 +1,7 @@
 .idea
 settings_local.py
 data
+venv
 *.pyc
 *~
 .DS_Store
