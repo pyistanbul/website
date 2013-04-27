@@ -120,10 +120,8 @@ nav a {
 }
 
 header h1#logo {
-    background: url(../images/logo.png) no-repeat;
     width: 340px;
     height: 91px;
-    text-indent: -99999px;
 }
 
 .presentations ul {

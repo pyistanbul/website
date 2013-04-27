@@ -10,8 +10,8 @@
     <title>{% block title %}Python Istanbul{% endblock %}</title>
     <meta name="description" content="Python Istanbul">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="../static/media/css/normalize.min.css">
-    <link rel="stylesheet" href="../static/media/css/main.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
     <!--[if lt IE 9]>
     <script src="../static/media/js/html5shiv.js"></script>
     <![endif]-->
@@ -26,7 +26,9 @@
 
 <div class="header-container">
     <header class="wrapper clearfix">
-        <h1 id="logo" class="title">Python Istanbul</h1>
+        <h1 id="logo" class="title">
+            <a href="{% url "home" %}">
+                <img src="{{ STATIC_URL }}images/logo.png" alt=""></a></h1>
         <nav>
             <ul>
                 <li><a href="{% url "presentations:index" %}">sunumlar</a></li>
