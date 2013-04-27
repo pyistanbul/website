@@ -18,8 +18,9 @@ urlpatterns = patterns(
     # third party apps
     url(r'^$', ArticleListView.as_view(template_name="index.html"),
         name='home'),
-    url(r'^blog/(?P<slug>[-\w]+)$',view=ArticleDetailView.as_view(),
-        name='radpress-article-detail'),
+    url(r'^blog/', include('radpress.urls')),
+    url(r'^blog/(?P<slug>[-\w]+)$', view=ArticleDetailView.as_view(),
+        name='radpress-article-detail'),  # overrides radpress detail url
 
     # admin
     url(r'^admin/',
