@@ -1,0 +1,145 @@
+[
+{
+    "pk": 1, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Aybars Badur, Cenk Alt\u0131", 
+        "date": "2012-11-24", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/putio-presentation", 
+        "description": " ", 
+        "title": "Put.io'nun Python'a Ge\u00e7i\u015f Hikayesi"
+    }
+},
+{
+    "pk": 2, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Cihan Okyay", 
+        "date": "2012-11-24", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/nasil-calisiyorum", 
+        "description": " ", 
+        "title": "Nas\u0131l \u00c7al\u0131\u015f\u0131yorum"
+    }
+},
+{
+    "pk": 3, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Alper Kanat", 
+        "date": "2012-11-24", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/django-301-presentation", 
+        "description": " ", 
+        "title": "Django 301"
+    }
+},
+{
+    "pk": 4, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Fatih Erikli", 
+        "date": "2012-11-24", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/django-orm-optimization", 
+        "description": " ", 
+        "title": "Django ORM Optimizasyonu"
+    }
+},
+{
+    "pk": 5, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Burak Yi\u011fit Kaya", 
+        "date": "2012-06-23", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/meta-programming-presentation", 
+        "description": " ", 
+        "title": "Python ile Meta Programlama"
+    }
+},
+{
+    "pk": 6, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Berker Peksa\u011f", 
+        "date": "2012-05-26", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/pypy-presentation", 
+        "description": " ", 
+        "title": "PyPy 101"
+    }
+},
+{
+    "pk": 7, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Fatih Erikli", 
+        "date": "2012-05-26", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/celery-presentation", 
+        "description": " ", 
+        "title": "Celery ve RabbitMQ ile Da\u011f\u0131t\u0131lm\u0131\u015f \u0130\u015fler"
+    }
+},
+{
+    "pk": 8, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Taylan Pin\u00e7e", 
+        "date": "2012-03-25", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/haystack-solr-presentation", 
+        "description": " ", 
+        "title": "Django'da Haystack + Apache Solr"
+    }
+},
+{
+    "pk": 9, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Muhammet S. Ayd\u0131n", 
+        "date": "2010-12-12", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/qooxdoo-presentation", 
+        "description": " ", 
+        "title": "Qooxdoo"
+    }
+},
+{
+    "pk": 10, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Osman Y\u00fcksel", 
+        "date": "2012-08-08", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/tornado-presentation", 
+        "description": " ", 
+        "title": "Tornado"
+    }
+},
+{
+    "pk": 11, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Atamert \u00d6l\u00e7gen", 
+        "date": "2010-08-07", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/introduction-to-rest-presentation", 
+        "description": " ", 
+        "title": "reST'e Giri\u015f"
+    }
+},
+{
+    "pk": 12, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Metin Amiroff", 
+        "date": "2010-06-13", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/python-zen-presentation", 
+        "description": " ", 
+        "title": "Python Zen'i"
+    }
+},
+{
+    "pk": 13, 
+    "model": "presentations.presentation", 
+    "fields": {
+        "owner": "Atamert \u00d6l\u00e7gen", 
+        "date": "2012-05-09", 
+        "link": "https://github.com/pyistanbul/presentations/tree/master/python-imaging-presentation", 
+        "description": " ", 
+        "title": "Python-Imaging ile Temel \u0130\u015flemler"
+    }
+}
+]
