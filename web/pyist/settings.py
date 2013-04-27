@@ -1,3 +1,4 @@
+# coding=utf-8
 import os
 
 DEBUG = True
@@ -67,6 +68,7 @@ INSTALLED_APPS = (
 
     'gravatar',
     'markitup',
+    'radpress',
 
     'blog',
     'jobs',
@@ -103,6 +105,12 @@ LOGGING = {
 # Markitup Settings
 MARKITUP_SET = 'markitup/sets/markdown'
 MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
+
+# Radpress Settings
+RADPRESS_TITLE = 'Python İstanbul'
+RADPRESS_DESCRIPTION = "Python İstanbul Günlüğü"
+RADPRESS_LIMIT = 5
+RADPRESS_DISQUS = 'pyistanbul'
 
 try:
     from settings_local import *

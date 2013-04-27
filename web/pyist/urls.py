@@ -12,5 +12,6 @@ urlpatterns = patterns(
     url(r'^jobs/', include('jobs.urls', namespace="jobs")),
     url(r'^presentations/', include('presentations.urls',
                                     namespace="presentations")),
+    url(r'^blog/', include('radpress.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
