@@ -2,9 +2,15 @@
 
 {% block content %}
 <article>
-    <header>
-        <h2>Python Istanbul web sitesini yeniledik</h2>
-    </header>
+    {% for post in object_list %}
+       <div class="post">
+           <header>
+               <time>{{ post.created_at|date }}</time>
+               <h3><a href="{{ post.get_absolute_url }}">{{ post }}</a></h3>
+           </header>
+           {{ post.content_body|safe }}
+       </div>
+    {% endfor %}
 </article>
 
 <aside>

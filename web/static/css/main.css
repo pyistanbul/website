@@ -111,6 +111,28 @@ nav a {
     padding: 20px 0;
 }
 
+.post {
+    width: 550px;
+    line-height: 27px;
+    color: #4a4a4a;
+}
+
+.post h3 a {
+    color: #393939;
+    text-decoration: none;
+}
+
+.post time {
+    font-size: 23px;
+    color: #888888;
+}
+
+.post h3 {
+    color: #393939;
+    font-size: 30px;
+    margin: 3px 0;
+}
+
 /* ===============
     ALL: IE Fixes
    =============== */
@@ -181,7 +203,7 @@ nav ul li {
 
 .main article {
     float: left;
-    width: 57%;
+    width: 50%;
 }
 
 .main aside {
