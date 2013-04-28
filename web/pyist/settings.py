@@ -10,7 +10,11 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'berkerpeksag.com',
+    'pyistanbul.org',
+    'pyist.org',
+]
 TIME_ZONE = 'Europe/Istanbul'
 LANGUAGE_CODE = 'TR-tr'
 SITE_ID = 1
