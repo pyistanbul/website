@@ -74,7 +74,6 @@ INSTALLED_APPS = (
     'markitup',
     'radpress',
 
-    'blog',
     'jobs',
     'people',
     'presentations',
