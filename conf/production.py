@@ -4,6 +4,8 @@ This file should be linked as settings_local.py in the settings directory.
 
 import os
 
+DEBUG = False
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
