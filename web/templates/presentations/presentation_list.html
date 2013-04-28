@@ -8,7 +8,7 @@
 
     <div class="presentations">
         {% for date in presentations %}
-            <h3>{{ date.grouper }}</h3>
+            <h3><time datetime="{{ date.grouper|date:"c" }}">{{ date.grouper }}</time></h3>
             <ul>
             {% for presentation in date.list %}
                 <li>
