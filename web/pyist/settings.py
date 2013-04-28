@@ -11,9 +11,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 ALLOWED_HOSTS = [
-    'berkerpeksag.com',
-    'pyistanbul.org',
-    'pyist.org',
+    '127.0.0.1',
 ]
 TIME_ZONE = 'Europe/Istanbul'
 LANGUAGE_CODE = 'TR-tr'
