@@ -3,3 +3,4 @@ django==1.5.1
 django-gravatar==0.1.0
 django-markitup==1.0.0
 radpress==0.3.4
+gunicorn==0.17.4
