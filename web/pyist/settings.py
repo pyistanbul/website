@@ -73,6 +73,7 @@ INSTALLED_APPS = (
     'gravatar',
     'markitup',
     'radpress',
+    'nose',
 
     'jobs',
     'people',
@@ -114,6 +115,9 @@ RADPRESS_TITLE = 'Python İstanbul'
 RADPRESS_DESCRIPTION = "Python İstanbul Günlüğü"
 RADPRESS_LIMIT = 5
 RADPRESS_DISQUS = 'pyistanbul'
+
+# Nose Settings
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 try:
     from settings_local import *

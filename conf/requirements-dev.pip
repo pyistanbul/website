@@ -1,0 +1,2 @@
+-r requirements.pip
+django-nose==1.1
