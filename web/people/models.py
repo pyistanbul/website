@@ -12,16 +12,11 @@ class Person(models.Model):
         help_text='Gravatar için gerekmektedir, sitede gözükmeyecektir.')
     blog_link = models.URLField(max_length=255, verbose_name="Blog URL")
     twitter_username = models.CharField(
-        max_length=255,
-        blank=True,
-        null=True,
-        verbose_name='Twitter',
+        max_length=255, blank=True,
+        null=True, verbose_name='Twitter',
         help_text='Twitter kullanıcı adınızı giriniz.')
     github_username = models.CharField(
-        max_length=255,
-        blank=True,
-        null=True,
-        verbose_name='Github',
+        max_length=255, blank=True, null=True, verbose_name='Github',
         help_text='Github.com kullanıcı adınızı giriniz.')
     is_active = models.BooleanField()
 
@@ -30,3 +25,9 @@ class Person(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.name)
+
+    def normalize_name(self):
+        # todo: may be moved to the view logic
+        if self.email == "sepeth@gmail.com":
+            return "Doğan Cassandra"
+        return self.name

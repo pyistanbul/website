@@ -13,7 +13,7 @@
         <li>
             <img src="{% gravatar_for_email person.email 100 %}" alt="{{ person.name }}">
             <p>
-                <strong>{{ person.name }}</strong>
+                <strong>{{ person.normalize_name }}</strong>
                 <a href="http://twitter.com/{{ person.twitter_username }}">Twitter</a>
                 <a href="http://github.com/{{ person.github_username }}">Github</a>
                 <a href="{{ person.blog_link }}">Blog</a>
