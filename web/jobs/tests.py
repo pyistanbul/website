@@ -6,18 +6,21 @@ from jobs.models import Job
 
 
 class JobsTest(TestCase):
+
+    job = {
+        'title': 'test title',
+        'company': 'test company',
+        'url': 'http://example.com',
+        'description': 'example description',
+        'location': 'istanbul'
+    }
+
     def setUp(self):
         self.tester = User.objects.create(username='tester')
         self.client = Client()
 
     def test_create(self):
-        response = self.client.post(reverse('jobs:new'), {
-            'title': 'test title',
-            'company': 'test company',
-            'url': 'http://example.com',
-            'description': 'example description',
-            'location': 'istanbul'
-        })
+        response = self.client.post(reverse('jobs:new'), self.job)
         self.assertRedirects(response, '/jobs/')
         self.assertTrue(Job.objects.exists())
         job = Job.objects.get()
@@ -28,12 +31,6 @@ class JobsTest(TestCase):
         self.assertEqual(job.location, 'istanbul')
 
     def test_listing(self):
-        job = Job.objects.create(
-            title='test title',
-            company='test company',
-            url='http://url.com',
-            description='example desciption',
-            location='istanbul'
-        )
+        job = Job.objects.create(**self.job)
         response = self.client.get(reverse('jobs:detail', args=[job.id]))
         self.assertContains(response, "test title")
