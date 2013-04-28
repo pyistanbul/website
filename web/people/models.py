@@ -28,6 +28,6 @@ class Person(models.Model):
 
     def normalize_name(self):
         # todo: may be moved to the view logic
-        if self.email == "sepeth@gmail.com":
+        if self.email.encode("rot13") == "frcrgu@tznvy.pbz":
             return "Doğan Cassandra"
         return self.name
