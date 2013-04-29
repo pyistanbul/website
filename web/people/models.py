@@ -31,3 +31,7 @@ class Person(models.Model):
         if self.email.encode("rot13") == "frcrgu@tznvy.pbz":
             return "Doğan Cassandra"
         return self.name
+
+    def badge(self):
+        if self.email.encode("rot13") == "uhfrlvanyo@tznvy.pbz":
+            return "huseyinalbing"

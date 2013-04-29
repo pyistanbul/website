@@ -10,9 +10,14 @@
 
     <ul class="people">
     {% for person in person_list %}
-        <li>
+        <li {% if person.badge %}class="{{ person.badge }}"{% endif %}>
             <img src="{% gravatar_for_email person.email 100 %}" alt="{{ person.name }}">
             <p>
+                {% if person.badge %}
+                    {% if person.badge == "huseyinalbing" %}
+                        <a href="http://500t.org/?o=huseyinalb" class="badge"></a>
+                    {% endif %}
+                {% endif %}
                 <strong>{{ person.normalize_name }}</strong>
                 <a href="http://twitter.com/{{ person.twitter_username }}">Twitter</a>
                 <a href="http://github.com/{{ person.github_username }}">Github</a>

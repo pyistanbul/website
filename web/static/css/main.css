@@ -311,7 +311,17 @@ ul.people li p a {
     margin-bottom: -6px;
 }
 
-form {
+ul.people li .badge {
+    display: inline-block;
+    color: #ff5121;
+    font-size: 30px;
+    position: absolute;
+    margin-left: 119px;
+    margin-top: 3px;
+}
+
+ul.people li .badge:after {
+    content: "\2605";
 }
 
 form label {
