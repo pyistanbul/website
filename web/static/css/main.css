@@ -133,6 +133,10 @@ nav a {
     margin: 3px 0;
 }
 
+.post a {
+   color: #296aa1;
+}
+
 #github {
     background: url(../images/octocat.jpg) no-repeat left -70px;
     float: right;
