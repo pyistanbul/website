@@ -68,6 +68,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
+    'south',
     'gravatar',
     'markitup',
     'radpress',
