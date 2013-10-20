@@ -14,6 +14,9 @@ class Job(models.Model):
                               help_text="Markdown formatında yazabilirsiniz.")
     location = models.CharField(max_length=255, verbose_name='Lokasyon')
     date_created = models.DateTimeField(default=now)
+    
+    class Meta:
+        ordering = ["-date_created"]
 
     @models.permalink
     def get_absolute_url(self):
