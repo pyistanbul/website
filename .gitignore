@@ -1,5 +1,6 @@
 .idea
 settings_local.py
+fabenv.py
 data
 venv
 *.pyc

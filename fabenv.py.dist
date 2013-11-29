@@ -1,0 +1,10 @@
+from fabric.api import env
+
+env.hosts = ['berkerpeksag.com']
+env.host = env.hosts[0]
+env.user = 'wakefield'
+env.password = ''
+env.project_name = 'pyistanbul'
+env.domain = 'pyistanbul.org'
+env.root = '/home/wakefield/'
+env.activate = 'source venv/bin/activate'
