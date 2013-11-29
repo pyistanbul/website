@@ -63,18 +63,6 @@ def setup():
         sudo('ln -s conf/nginx.conf /etc/nginx/sites-enabled/' + env.domain)
 
 
-def migrate_gunicorn():
-    """GNU Screen'den Gunicorn'a geçişte tek seferlik kullanılacak."""
-    run('screen -d')
-    sudo('rm /etc/nginx/sites-enabled/' + env.domain)
-
-    with venv():
-        run('git pull')
-        sudo('ln -s conf/nginx.conf /etc/nginx/sites-enabled/' + env.domain)
-
-    start()
-
-
 def setup_vm():
     """Setup the VM."""
     sudo('apt-get update && apt-get upgrade && apt-get install git-core '
