@@ -30,7 +30,7 @@ def deploy():
 
 def start():
     with venv():
-        run('gunicorn -c conf/gunicorn.py app:app')
+        run('gunicorn_django -c conf/gunicorn.py')
 
     restart_nginx()
 
