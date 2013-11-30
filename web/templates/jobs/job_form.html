@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 
+{% load honeypot %}
+
 {% block content %}
     <h3>Yeni İş İlanı</h3>
     <form action="{% url "jobs:new" %}" method="post">
     {% csrf_token %}
+    {% render_honeypot_field %}
     {% for field in form %}
         <div class="line">
             {{ field.errors }}

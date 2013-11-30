@@ -73,11 +73,11 @@ INSTALLED_APPS = (
     'markitup',
     'radpress',
     'nose',
+    'honeypot',
 
     'jobs',
     'people',
     'presentations',
-
 )
 
 LOGGING = {
@@ -114,6 +114,9 @@ RADPRESS_TITLE = 'Python İstanbul'
 RADPRESS_DESCRIPTION = "Python İstanbul Günlüğü"
 RADPRESS_LIMIT = 5
 RADPRESS_DISQUS = 'pyistanbul'
+
+# Honeypot Settings
+HONEYPOT_FIELD_NAME = 'cihann'
 
 # Nose Settings
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
