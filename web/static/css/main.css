@@ -66,6 +66,10 @@ body {
     margin: 0 5%;
 }
 
+.footer-container {
+    height: 106px;
+}
+
 .footer-container,
 .main aside {
     border-top: 20px solid #3773a5;
@@ -107,10 +111,6 @@ nav a {
     padding: 0 5% 10px;
 }
 
-.footer-container footer {
-    padding: 20px 0;
-}
-
 .post {
     width: 550px;
     line-height: 27px;
@@ -133,17 +133,19 @@ nav a {
     margin: 3px 0;
 }
 
-.post a {
+.post a,
+dl dd a {
    color: #296aa1;
 }
 
 #github {
     background: url(../images/octocat.jpg) no-repeat left -70px;
+    /*border: 1px #ff0000 solid;*/
     float: right;
     width: 510px;
     padding-top: 10px;
     text-align: right;
-    margin-top: -20px;
+    margin-top: -16px;
     height: 95px;
 }
 
@@ -152,6 +154,18 @@ nav a {
     font-size: 20px;
     text-decoration: none;
 }
+
+dl {
+    width: 300px;
+}
+
+dl dt {
+    float: left;
+    padding-right: 15px;
+    text-align: right;
+    width: 55px;
+}
+
 
 /* ===============
     ALL: IE Fixes
