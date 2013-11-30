@@ -56,6 +56,13 @@ def update_nginx_conf():
     restart_nginx()
 
 
+def static():
+    """Update static files."""
+    with venv():
+        sudo('rm -r static/')
+        sudo('python manage.py collectstatic --noinput')
+
+
 def setup():
     """Configure basic tools."""
     with cd(env.root):

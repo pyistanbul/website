@@ -1,6 +1,8 @@
 # coding=utf-8
 import os
 
+PROJECT_PATH = os.path.abspath(os.getcwd())
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -23,11 +25,11 @@ USE_TZ = True
 
 MEDIA_ROOT = ''
 MEDIA_URL = ''
-STATIC_ROOT = ''
+STATIC_ROOT = '{:s}/static/'.format(PROJECT_PATH)
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(__file__), "../static"),
+    '{:s}/static_files/'.format(PROJECT_PATH),
 )
 
 STATICFILES_FINDERS = (
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'pyist.urls'
 WSGI_APPLICATION = 'pyist.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), "../templates"),
+    os.path.join(PROJECT_PATH, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -104,6 +106,17 @@ LOGGING = {
     }
 }
 
+# Database Settings
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '{:s}/data/db.sqlite'.format(PROJECT_PATH),
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
+}
 
 # Markitup Settings
 MARKITUP_SET = 'markitup/sets/markdown'
@@ -120,8 +133,3 @@ HONEYPOT_FIELD_NAME = 'cihann'
 
 # Nose Settings
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-
-try:
-    from settings_local import *
-except ImportError:
-    print "settings_local not found"
