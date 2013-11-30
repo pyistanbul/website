@@ -3,6 +3,7 @@ settings_local.py
 fabenv.py
 data/db.sqlite
 venv
+static/
 *.pyc
 *~
 .DS_Store
