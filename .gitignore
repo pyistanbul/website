@@ -1,7 +1,7 @@
 .idea
 settings_local.py
 fabenv.py
-data
+data/db.sqlite
 venv
 *.pyc
 *~

@@ -46,7 +46,14 @@ def restart_nginx():
 
 def update_dependencies():
     """Update requirements remotely."""
-    run('pip install -r conf/requirements.pip')
+    with venv():
+        run('pip install -r conf/requirements.txt')
+
+
+def update_nginx_conf():
+    sudo('rm /etc/nginx/sites-enabled/' + env.domain)
+    sudo('ln -s /home/wakefield/pyistanbul/conf/nginx.conf /etc/nginx/sites-enabled/' + env.domain)
+    restart_nginx()
 
 
 def setup():
