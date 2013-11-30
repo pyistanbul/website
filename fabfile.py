@@ -23,6 +23,7 @@ def deploy():
         run('git pull')
         update_dependencies()
 
+    update_static()
     restart()
     restart_nginx()
 
@@ -56,7 +57,7 @@ def update_nginx_conf():
     restart_nginx()
 
 
-def static():
+def update_static():
     """Update static files."""
     with venv():
         sudo('rm -r static/')
