@@ -73,9 +73,11 @@ def setup():
         run('virtualenv venv')
 
     with venv():
-        run('pip install -r requirements.txt')
-        run('cp settings.py.dist settings.py')
-        sudo('ln -s conf/nginx.conf /etc/nginx/sites-enabled/' + env.domain)
+        run('pip install -r conf/requirements.txt')
+
+    update_nginx_conf()
+    update_static()
+    start()
 
 
 def setup_vm():
