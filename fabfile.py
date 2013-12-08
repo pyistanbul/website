@@ -60,8 +60,7 @@ def update_nginx_conf():
 def update_static():
     """Update static files."""
     with venv():
-        sudo('rm -r static/')
-        sudo('python manage.py collectstatic --noinput')
+        sudo('python manage.py collectstatic --clear --noinput')
 
 
 def setup():
