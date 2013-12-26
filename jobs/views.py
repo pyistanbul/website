@@ -18,8 +18,7 @@ class JobDetailView(DetailView):
 class CreateJobView(CreateView):
     model = Job
     form_class = JobForm
-    success_message = 'İlanınız başarıyle eklendi. Editörler tarafından ' \
-                      'onaylandıktan sonra sitede yayınlanacaktır.'
+    success_message = 'İlanınız başarıyle eklendi.' 
 
     def form_valid(self, form):
         messages.success(self.request, self.success_message)

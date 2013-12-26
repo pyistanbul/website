@@ -4,6 +4,7 @@ from django.utils.encoding import smart_unicode
 from django.utils.timezone import now
 
 from markitup.fields import MarkupField
+from djangospam.akismet import moderator as akismet
 
 
 class Job(models.Model):
@@ -14,7 +15,7 @@ class Job(models.Model):
                               help_text="Markdown formatında yazabilirsiniz.")
     location = models.CharField(max_length=255, verbose_name='Lokasyon')
     date_created = models.DateTimeField(default=now)
-    
+
     class Meta:
         ordering = ["-date_created"]
 
@@ -24,3 +25,8 @@ class Job(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+try:
+    akismet.register(Job)
+except akismet.AlreadyModerated:
+    pass
