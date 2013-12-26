@@ -50,7 +50,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'honeypot.middleware.HoneypotMiddleware',
 )
 
 ROOT_URLCONF = 'pyist.urls'
@@ -76,7 +75,6 @@ INSTALLED_APPS = (
     'markitup',
     'radpress',
     'nose',
-    'honeypot',
 
     'jobs',
     'people',
@@ -129,9 +127,12 @@ RADPRESS_DESCRIPTION = "Python İstanbul Günlüğü"
 RADPRESS_LIMIT = 5
 RADPRESS_DISQUS = 'pyistanbul'
 
-# Honeypot Settings
-HONEYPOT_FIELD_NAME = 'cihann'
-HONEYPOT_VALUE = 'cbzcnpvonftna'
-
 # Nose Settings
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Djangospam Settings
+AKISMET_BLOG = 'http://pyistanbul.org'
+AKISMET_KEY = ''
+AKISMET_USERAGENT = 'pyistanbul'
+AKISMET_USERAGENT_VERSION = '0.1'
+DISCARD_SPAM = True
