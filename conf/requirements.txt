@@ -6,5 +6,4 @@ django-markitup==1.0.0
 django-nose==1.1
 radpress==0.3.4
 gunicorn==0.17.4
-django-honeypot==0.3.0
 djangospam==1.0.0
