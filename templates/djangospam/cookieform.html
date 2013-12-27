@@ -1,0 +1,22 @@
+<div id="{% if dsformid %}{{ dsformid }}{% else %}dsform{% endif %}">
+<form method="post" action="{% url 'djangospam.cookie.views.spammer_view' %}">
+    <label for="honeypot">Honeypot</label>
+        <input id="honeypot" type="text" name="honeypot">
+    <label for="name">Name</label>
+        <input id="name" type="text" name="name">
+    <label for="email">E-mail</label>
+        <input id="email" type="text" name="email">
+    <label for="url">Website (optional)</label>
+        <input id="url" type="text" name="url">
+    <label for="comment">Your comment</label>
+        <textarea id="comment" name="comment"></textarea>
+    {% csrf_token %}
+    <input type="submit" value="Send">
+</form>
+</div>
+
+<script>
+    div = document.getElementById("{% if dsformid %}{{ dsformid }}{% else %}dsform{% endif %}")
+    div.style.display = "none"
+    div.style.visibility = "hidden"
+</script>

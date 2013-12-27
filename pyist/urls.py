@@ -21,6 +21,7 @@ urlpatterns = patterns(
     url(r'^blog/', include('radpress.urls')),
     url(r'^blog/(?P<slug>[-\w]+)$', view=ArticleDetailView.as_view(),
         name='radpress-article-detail'),  # overrides radpress detail url
+    url(r'^comments/', include('djangospam.cookie.urls')),
 
     # admin
     url(r'^admin/',

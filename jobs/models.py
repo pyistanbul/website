@@ -4,7 +4,6 @@ from django.utils.encoding import smart_unicode
 from django.utils.timezone import now
 
 from markitup.fields import MarkupField
-from djangospam.akismet import moderator as akismet
 
 
 class Job(models.Model):
@@ -25,8 +24,3 @@ class Job(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
-
-try:
-    akismet.register(Job)
-except akismet.AlreadyModerated:
-    pass

@@ -2,6 +2,7 @@
 
 {% block content %}
     <h3>Yeni İş İlanı</h3>
+    {% include 'djangospam/cookieform.html' %}
     <form action="{% url "jobs:new" %}" method="post">
     {% csrf_token %}
     {% for field in form %}
