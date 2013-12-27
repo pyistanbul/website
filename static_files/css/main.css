@@ -25,6 +25,11 @@ body {
     text-shadow: none;
 }
 
+/* for the HTML5 hidden attribute */
+*[hidden] {
+    display: none;
+}
+
 hr {
     display: block;
     height: 1px;
