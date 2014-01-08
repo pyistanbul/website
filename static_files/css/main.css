@@ -72,7 +72,7 @@ body {
 }
 
 .footer-container {
-    height: 106px;
+    height: 136px;
 }
 
 .footer-container,
@@ -148,13 +148,13 @@ dl dd a {
 }
 
 #github {
-    background: url(../images/octocat.jpg) no-repeat left -70px;
+    background: url(../images/octocat.jpg) no-repeat left -65px;
     float: right;
     width: 510px;
     padding-top: 10px;
     text-align: right;
     margin-top: -16px;
-    height: 95px;
+    height: 126px;
 }
 
 #github a {
@@ -171,7 +171,7 @@ dl dt {
     float: left;
     padding-right: 15px;
     text-align: right;
-    width: 55px;
+    width: 75px;
 }
 
 
