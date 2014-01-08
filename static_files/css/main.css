@@ -116,6 +116,10 @@ nav a {
     padding: 0 5% 10px;
 }
 
+#oreilly-ug {
+    padding-top: 20px;
+}
+
 .post {
     width: 550px;
     line-height: 27px;
