@@ -24,6 +24,5 @@ urlpatterns = patterns(
     url(r'^comments/', include('djangospam.cookie.urls')),
 
     # admin
-    url(r'^admin/',
-        include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
 )
