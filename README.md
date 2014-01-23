@@ -1,6 +1,8 @@
 Python Istanbul Website
 =======================
 
+[![Build Status](https://travis-ci.org/pyistanbul/website.png?branch=master)](https://travis-ci.org/pyistanbul/website)
+
 ### License
 
 Copyright © 2013 Python Istanbul
