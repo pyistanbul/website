@@ -9,6 +9,12 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
 
+    # auth
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login',
+        {'template_name': 'registration/login.html', 'extra_context': {'next': '/wiki'}}),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout',
+        {'next_page': '/wiki'}),
+
     # apps
     url(r'^people/', include('people.urls', namespace="people")),
     url(r'^jobs/', include('jobs.urls', namespace="jobs")),
@@ -22,6 +28,9 @@ urlpatterns = patterns(
     url(r'^blog/(?P<slug>[-\w]+)$', view=ArticleDetailView.as_view(),
         name='radpress-article-detail'),  # overrides radpress detail url
     url(r'^comments/', include('djangospam.cookie.urls')),
+
+    # wiki
+    url(r'^wiki/', include('simplewiki.urls')),
 
     # admin
     url(r'^admin/', include(admin.site.urls)),
