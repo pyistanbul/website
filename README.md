@@ -1,7 +1,26 @@
-Python Istanbul Website
-=======================
+# Python Istanbul Website
 
 [![Build Status](https://travis-ci.org/pyistanbul/website.png?branch=master)](https://travis-ci.org/pyistanbul/website)
+
+## Installation
+
+```sh
+$ git clone https://github.com/pyistanbul/website.git
+$ cd website/
+$ virtualenv venv
+$ . venv/bin/activate
+$ pip install -r conf/requirements.txt
+$ cp pyist/settings_local.py.dist pyist/settings_local.py
+$ python manage.py syncdb
+$ python runserver
+$ firefox http://127.0.0.1:8000/
+```
+
+To run all unit tests:
+
+```sh
+$ python manage.py test -v2
+```
 
 ### License
 
