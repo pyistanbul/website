@@ -26,12 +26,6 @@ class Person(models.Model):
     def __unicode__(self):
         return smart_unicode(self.name)
 
-    def normalize_name(self):
-        # todo: may be moved to the view logic
-        if self.email.encode("rot13") == "frcrgu@tznvy.pbz":
-            return "Doğan Cassandra"
-        return self.name
-
     def badge(self):
         if self.email.encode("rot13") == "uhfrlvanyo@tznvy.pbz":
             return "huseyinalbing"
