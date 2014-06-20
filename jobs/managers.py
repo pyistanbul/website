@@ -1,10 +1,12 @@
+import datetime
+
 from django.db import models
 
 
 class JobsManager(models.Manager):
 
     def active(self):
-        return self.get_query_set().filter(is_active=True)
-
-    def live(self):
-        return self.active().filter(is_live=True)
+        now = datetime.datetime.now()
+        three_months_ago = now - datetime.timedelta(weeks=3 * 4)  # 3 months
+        return super(JobsManager, self).get_query_set().filter(
+            date_created__range=(three_months_ago, now))

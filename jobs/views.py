@@ -8,7 +8,7 @@ from jobs.forms import JobForm
 
 
 class JobsView(ListView):
-    model = Job
+    queryset = Job.objects.active()
 
 
 class JobDetailView(DetailView):

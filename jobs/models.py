@@ -5,6 +5,8 @@ from django.utils.timezone import now
 
 from markitup.fields import MarkupField
 
+from .managers import JobsManager
+
 
 class Job(models.Model):
     title = models.CharField(max_length=255, verbose_name='Başlık')
@@ -14,6 +16,8 @@ class Job(models.Model):
                               help_text="Markdown formatında yazabilirsiniz.")
     location = models.CharField(max_length=255, verbose_name='Lokasyon')
     date_created = models.DateTimeField(default=now)
+
+    objects = JobsManager()
 
     class Meta:
         ordering = ["-date_created"]
