@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load gravatar_tags %}
+{% load gravatar %}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
     <ul class="people">
     {% for person in person_list %}
         <li {% if person.badge %}class="{{ person.badge }}"{% endif %}>
-            <img src="{% gravatar_for_email person.email 100 %}" alt="{{ person.name }}">
+            {% gravatar person.email 100 person.name %}
             <p>
                 {% if person.badge %}
                     {% if person.badge == "huseyinalbing" %}

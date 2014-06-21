@@ -72,7 +72,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'south',
-    'gravatar',
+    'django_gravatar',
     'markitup',
     'radpress',
     'nose',
