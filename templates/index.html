@@ -7,6 +7,7 @@
            <header>
                <time>{{ post.created_at|date }}</time>
                <h3><a href="{{ post.get_absolute_url }}">{{ post }}</a></h3>
+               <p>{{ post.author.get_full_name|title }}</p>
            </header>
            {{ post.content_body|safe }}
        </div>
