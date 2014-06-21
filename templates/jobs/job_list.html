@@ -11,7 +11,7 @@
     <ul class="jobs">
     {% for job in job_list %}
         <li>
-            <time>{{ job.date_created|date }}</time>
+            <time>{{ job.date_created|date:"j F Y" }}</time>
             <a href="{{ job.get_absolute_url }}">
                 <span>{{ job.company }} /</span>
                 {{ job.title }}

@@ -5,7 +5,7 @@
     {% for post in object_list %}
        <div class="post">
            <header>
-               <time>{{ post.created_at|date }}</time>
+               <time>{{ post.created_at|date:"j F Y" }}</time>
                <h3><a href="{{ post.get_absolute_url }}">{{ post }}</a></h3>
                <p>{{ post.author.get_full_name|title }}</p>
            </header>
