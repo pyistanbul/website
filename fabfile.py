@@ -23,7 +23,6 @@ def deploy():
         run('git pull')
         update_dependencies()
         run('python manage.py syncdb')
-        run('python manage.py migrate --all')
     update_static()
     restart()
     restart_nginx()
