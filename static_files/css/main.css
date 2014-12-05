@@ -328,14 +328,13 @@ ul.people li p {
 ul.people li p strong {
     width: 100%;
     display: block;
+    margin-bottom: .5em;
 }
 
 ul.people li p a {
-    display: block;
     color: #4994cf;
     text-decoration: none;
-    font-size: 16px;
-    margin-bottom: -6px;
+    margin-right: .3em;
 }
 
 ul.people li .badge {
