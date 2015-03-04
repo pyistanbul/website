@@ -1,26 +1,28 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from django.contrib.sitemaps.views import index, sitemap
 
-from radpress.views import ArticleListView, ArticleDetailView
-
+from blog.sitemap import BlogSitemap
 
 admin.autodiscover()
+
+sitemaps = {
+    'blog': BlogSitemap,
+}
 
 urlpatterns = patterns(
     '',
 
     # apps
+    url(r'^', include('blog.urls', namespace="blog")),
     url(r'^people/', include('people.urls', namespace="people")),
     url(r'^jobs/', include('jobs.urls', namespace="jobs")),
     url(r'^presentations/', include('presentations.urls',
                                     namespace="presentations")),
+    url(r'^sitemap\.xml$', index, {'sitemaps': sitemaps}),
+    url(r'^sitemap-(?P<section>.+)\.xml$', sitemap, {'sitemaps': sitemaps}),
 
     # third party apps
-    url(r'^$', ArticleListView.as_view(template_name="index.html"),
-        name='home'),
-    url(r'^blog/', include('radpress.urls')),
-    url(r'^blog/(?P<slug>[-\w]+)$', view=ArticleDetailView.as_view(),
-        name='radpress-article-detail'),  # overrides radpress detail url
     url(r'^comments/', include('djangospam.cookie.urls')),
 
     # admin
