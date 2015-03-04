@@ -8,6 +8,6 @@
             <time>{{ object.created_at|date:"j F Y" }}</time>
             <h3>{{ object.title }}</h3>
         </header>
-        {{ object.content_body|safe }}
+        {{ object.description|safe }}
     </div>
 {% endblock %}

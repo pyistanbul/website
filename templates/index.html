@@ -8,9 +8,15 @@
                <time>{{ post.created_at|date:"j F Y" }}</time>
                <h3><a href="{{ post.get_absolute_url }}">{{ post }}</a></h3>
            </header>
-           {{ post.content_body|safe }}
+           {{ post.description|safe }}
        </div>
     {% endfor %}
+
+    {% if is_paginated and page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="button">
+            Daha fazla
+        </a>
+    {% endif %}
 </article>
 
 <aside>

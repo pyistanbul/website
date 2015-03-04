@@ -72,16 +72,17 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.flatpages',
+    'django.contrib.sitemaps',
 
     'south',
     'django_gravatar',
     'markitup',
-    'radpress',
     'nose',
 
     'jobs',
     'people',
     'presentations',
+    'blog'
 )
 
 LOGGING = {
@@ -124,11 +125,14 @@ DATABASES = {
 MARKITUP_SET = 'markitup/sets/markdown'
 MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
 
-# Radpress Settings
-RADPRESS_TITLE = 'Python İstanbul'
-RADPRESS_DESCRIPTION = "Python İstanbul Günlüğü"
-RADPRESS_LIMIT = 5
-RADPRESS_DISQUS = 'pyistanbul'
+# Blog Settings
+
+BLOG = {
+    'title': 'Python İstanbul',
+    'description': 'Python İstanbul Günlüğü',
+    'limit': 5,
+    'url': 'http://pyistanbul.org/'
+}
 
 # Djangospam Settings
 DJANGOSPAM_COOKIE_KEY = 'argumentclinic'
