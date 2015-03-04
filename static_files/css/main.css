@@ -329,6 +329,7 @@ ul.people li p strong {
     width: 100%;
     display: block;
     margin-bottom: .5em;
+    min-height: 78px;
 }
 
 ul.people li p a {
