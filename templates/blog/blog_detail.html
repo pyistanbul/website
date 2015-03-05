@@ -8,7 +8,7 @@
             <time>{{ object.created_at|date:"j F Y" }}</time>
             <h3>{{ object.title }}</h3>
         </header>
-        {{ object.description|safe }}
+        {{ object.description }}
     </div>
 
     {% if BLOG_SETTINGS.USE_DISQUS %}

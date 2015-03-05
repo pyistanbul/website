@@ -8,7 +8,7 @@ from people.forms import PersonForm
 
 
 class PeopleView(ListView):
-    model = Person
+    queryset = Person.objects.active()
 
 
 class CreatePeopleView(CreateView):

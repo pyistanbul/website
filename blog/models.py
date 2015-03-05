@@ -1,6 +1,7 @@
 # coding=utf-8
 from django.db import models
 from django.utils.encoding import smart_unicode
+from django.conf import settings
 
 from markitup.fields import MarkupField
 from .managers import BlogManager
@@ -13,6 +14,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
     is_published = models.BooleanField(default=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL)
 
     objects = BlogManager()
 

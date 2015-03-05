@@ -86,7 +86,6 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.sitemaps',
 
-    'south',
     'django_gravatar',
     'markitup',
     'nose',

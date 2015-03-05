@@ -1,5 +1,6 @@
 from django.test import TestCase, Client
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
 
 from .models import Post
 
@@ -13,7 +14,10 @@ class PostTest(TestCase):
     }
 
     def setUp(self):
-        self.post = Post.objects.create(**self.dummy_data)
+        self.user = User.objects.create_user(
+            username='testpyist', password='123456')
+        self.post = Post.objects.create(
+            author=self.user, **self.dummy_data)
         self.client = Client()
 
     def test_detail(self):
