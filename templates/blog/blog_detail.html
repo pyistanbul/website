@@ -10,4 +10,12 @@
         </header>
         {{ object.description|safe }}
     </div>
+
+    {% if BLOG_SETTINGS.USE_DISQUS %}
+    <div id="comments" class="post box">
+      <div class="content-space">
+        {% include "blog/partials/disqus.html" %}
+      </div>
+    </div>
+  {% endif %}
 {% endblock %}

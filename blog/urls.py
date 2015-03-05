@@ -8,7 +8,7 @@ urlpatterns = patterns(
     '',
     url(r'^$', BlogListView.as_view(), name="home"),
     url(r'^blog/(?P<slug>[-\w]+)/$', BlogDetailView.as_view(),
-        name="blog-detail"),
-    url(r'^feed/rss/$', BlogRssFeed(), name="blog-rss-feed"),
+        name="detail"),
+    url(r'^feed/rss/$', BlogRssFeed(), name="rss-feed"),
     url(r'^feed/atom/$', BlogAtomFeed(), name="blog-atom-feed"),
 )

@@ -54,6 +54,18 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+    'blog.context_processors.export_blog_settings',
+)
+
 ROOT_URLCONF = 'pyist.urls'
 
 
@@ -128,10 +140,12 @@ MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
 # Blog Settings
 
 BLOG = {
-    'title': 'Python İstanbul',
-    'description': 'Python İstanbul Günlüğü',
-    'limit': 5,
-    'url': 'http://pyistanbul.org/'
+    'TITLE': 'Python İstanbul',
+    'DESCRIPTION': 'Python İstanbul Günlüğü',
+    'LIMIT': 5,
+    'URL': 'http://pyistanbul.org/',
+    'DISQUS_USERNAME': 'pyistanbul',
+    'USE_DISQUS': False
 }
 
 # Djangospam Settings

@@ -8,7 +8,7 @@ from .models import Post
 class BlogListView(ListView):
     template_name = 'index.html'
     queryset = Post.objects.active()
-    paginate_by = settings.BLOG['limit']
+    paginate_by = settings.BLOG['LIMIT']
 
 
 class BlogDetailView(DetailView):

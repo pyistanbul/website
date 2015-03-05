@@ -26,5 +26,5 @@ class PostTest(TestCase):
 
     def test_invalid_detail(self):
         response = self.client.get(
-            reverse('blog:blog-detail', args=['test-test']))
+            reverse('blog:detail', args=['test-test']))
         self.assertEqual(response.status_code, 404)

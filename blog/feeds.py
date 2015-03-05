@@ -6,9 +6,9 @@ from .models import Post
 
 
 class BlogRssFeed(Feed):
-    title = settings.BLOG['title']
-    description = settings.BLOG['description']
-    link = settings.BLOG['url']
+    title = settings.BLOG['TITLE']
+    description = settings.BLOG['DESCRIPTION']
+    link = settings.BLOG['URL']
 
     def items(self):
         return Post.objects.active()[:20]
@@ -28,4 +28,4 @@ class BlogRssFeed(Feed):
 
 class BlogAtomFeed(BlogRssFeed):
     feed_type = Atom1Feed
-    subtitle = settings.BLOG['description']
+    subtitle = settings.BLOG['DESCRIPTION']
