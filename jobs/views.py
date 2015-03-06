@@ -12,13 +12,13 @@ class JobsView(ListView):
 
 
 class JobDetailView(DetailView):
-    model = Job
+    queryset = Job.objects.active()
 
 
 class CreateJobView(CreateView):
     model = Job
     form_class = JobForm
-    success_message = 'İlanınız başarıyle eklendi.' 
+    success_message = 'İlanınız başarıyle eklendi.'
 
     def form_valid(self, form):
         messages.success(self.request, self.success_message)

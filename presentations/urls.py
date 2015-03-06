@@ -1,9 +1,8 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import url
 
 from presentations.views import PresentationsView
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', PresentationsView.as_view(), name='index'),
-)
+]

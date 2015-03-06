@@ -10,7 +10,7 @@ class PostTest(TestCase):
     dummy_data = {
         'title': 'Hello World',
         'slug': 'hello-world',
-        'description': 'First Blog Post'
+        'description': 'First Blog Post',
     }
 
     def setUp(self):

@@ -1,6 +1,7 @@
 # coding=utf-8
 from django.db import models
 from django.utils.encoding import smart_unicode
+from .managers import PeopleManager
 
 
 class Person(models.Model):
@@ -18,7 +19,9 @@ class Person(models.Model):
     github_username = models.CharField(
         max_length=255, blank=True, null=True, verbose_name='Github',
         help_text='Github.com kullanıcı adınızı giriniz.')
-    is_active = models.BooleanField()
+    is_active = models.BooleanField(default=False)
+
+    objects = PeopleManager()
 
     class Meta:
         verbose_name_plural = "People"
