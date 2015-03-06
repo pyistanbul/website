@@ -8,7 +8,9 @@
                <time>{{ post.created_at|date:"j F Y" }}</time>
                <h3><a href="{{ post.get_absolute_url }}">{{ post }}</a></h3>
            </header>
-           {{ post.description|safe }}
+           {% autoescape off %}
+             {{ post.description.rendered }}
+          {% endautoescape %}
        </div>
     {% endfor %}
 

@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.sitemaps.views import index, sitemap
 
@@ -10,9 +10,7 @@ sitemaps = {
     'blog': BlogSitemap
 }
 
-urlpatterns = patterns(
-    '',
-
+urlpatterns = [
     # apps
     url(r'^', include('blog.urls', namespace="blog")),
     url(r'^people/', include('people.urls', namespace="people")),
@@ -27,4 +25,4 @@ urlpatterns = patterns(
 
     # admin
     url(r'^admin/', include(admin.site.urls)),
-)
+]
