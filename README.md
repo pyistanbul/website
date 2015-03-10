@@ -11,7 +11,6 @@ $ virtualenv venv
 $ . venv/bin/activate
 $ pip install -r conf/requirements.txt
 $ cp pyist/settings_local.py.dist pyist/settings_local.py
-$ python manage.py syncdb
 $ python manage.py migrate
 $ python manage.py runserver
 $ firefox http://127.0.0.1:8000/
