@@ -22,7 +22,7 @@ def deploy():
     with venv():
         run('git pull')
         update_dependencies()
-        run('python manage.py syncdb')
+        run('python manage.py migrate')
     update_static()
     restart()
     restart_nginx()
