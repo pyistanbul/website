@@ -1,6 +1,7 @@
-# coding=utf-8
+# coding: utf-8
+
 from django.db import models
-from django.utils.encoding import smart_unicode
+from django.utils.encoding import smart_text, python_2_unicode_compatible
 from django.utils.timezone import now
 
 from markitup.fields import MarkupField
@@ -8,13 +9,14 @@ from markitup.fields import MarkupField
 from .managers import JobsManager
 
 
+@python_2_unicode_compatible
 class Job(models.Model):
     title = models.CharField(max_length=255, verbose_name='Başlık')
     company = models.CharField(max_length=255, verbose_name='Şirket Adı')
     url = models.URLField(max_length=255, verbose_name='Başvuru Linki')
     description = MarkupField(verbose_name='Açıklama',
                               help_text="Markdown formatında yazabilirsiniz.")
-    location = models.CharField(max_length=255, verbose_name='Lokasyon')
+    location = models.CharField(max_length=255, verbose_name='Konum')
     date_created = models.DateTimeField(default=now)
 
     objects = JobsManager()
@@ -26,5 +28,5 @@ class Job(models.Model):
     def get_absolute_url(self):
         return 'jobs:detail', [self.pk]
 
-    def __unicode__(self):
-        return smart_unicode(self.title)
+    def __str__(self):
+        return smart_text(self.title)

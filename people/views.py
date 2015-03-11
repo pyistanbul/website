@@ -1,4 +1,5 @@
-# coding=utf-8
+# coding: utf-8
+
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.views.generic import ListView, CreateView
@@ -14,8 +15,10 @@ class PeopleView(ListView):
 class CreatePeopleView(CreateView):
     model = Person
     form_class = PersonForm
-    success_message = 'Kişi başarıyla eklendi. Editörler tarafından ' \
-                      'onaylandıktan sonra sitede yayınlanacaktır.'
+    success_message = (
+        'Kişi başarıyla eklendi. Editörler tarafından '
+        'onaylandıktan sonra sitede yayınlanacaktır.'
+    )
 
     def form_valid(self, form):
         messages.success(self.request, self.success_message)
