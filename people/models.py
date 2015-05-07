@@ -55,7 +55,7 @@ class SocialAccountLink(models.Model):
     link = models.URLField(max_length=255)
     user = models.ForeignKey('auth.User', related_name='links')
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s - %s' % (self.get_account_type_display(), self.user)
 
     class Meta:

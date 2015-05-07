@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.core.urlresolvers import reverse
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
@@ -31,3 +32,26 @@ class PeopleTest(TestCase):
         Person.objects.create(**person)
         response = self.client.get(reverse('people:index'))
         self.assertNotContains(response, "edi budu")
+
+    def test_people_detail(self):
+        response = self.client.get(
+            reverse('people:detail', args=[self.tester.username]))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, self.tester.username)
+
+    def test_people_detail_passive_user(self):
+        self.tester.is_active = False
+        self.tester.save()
+        response = self.client.get(
+            reverse('people:detail', args=[self.tester.username]))
+        self.assertEqual(response.status_code, 404)
+
+    def test_people_detail_password_change_link(self):
+        self.tester.set_password('123456')
+        self.tester.save()
+        self.client.login(username=self.tester.username, password='123456')
+        response = self.client.get(
+            reverse('people:detail', args=[self.tester.username]))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, self.tester.username)
+        self.assertContains(response, u"Parola Değiştir")
