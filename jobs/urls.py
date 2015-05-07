@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from jobs.views import JobsView, CreateJobView, JobDetailView
+from .views import JobsView, CreateJobView, JobDetailView
 
 
 urlpatterns = [

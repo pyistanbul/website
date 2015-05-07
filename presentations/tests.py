@@ -2,7 +2,7 @@ from django.core.urlresolvers import reverse
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 
-from presentations.models import Presentation
+from .models import Presentation
 
 
 class PeopleTest(TestCase):

@@ -1,6 +1,6 @@
 from django.views.generic import ListView
 
-from presentations.models import Presentation
+from .models import Presentation
 
 
 class PresentationsView(ListView):

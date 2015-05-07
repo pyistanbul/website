@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from presentations.views import PresentationsView
+from .views import PresentationsView
 
 
 urlpatterns = [

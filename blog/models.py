@@ -1,12 +1,15 @@
-# coding=utf-8
+# coding: utf-8
+
 from django.db import models
-from django.utils.encoding import smart_unicode
+from django.utils.encoding import smart_text, python_2_unicode_compatible
 from django.conf import settings
 
 from markitup.fields import MarkupField
+
 from .managers import BlogManager
 
 
+@python_2_unicode_compatible
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
@@ -21,8 +24,8 @@ class Post(models.Model):
     class Meta:
         ordering = ["-created_at"]
 
-    def __unicode__(self):
-        return smart_unicode(self.title)
+    def __str__(self):
+        return smart_text(self.title)
 
     @models.permalink
     def get_absolute_url(self):

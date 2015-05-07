@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from people.models import Person, SocialAccountLink
+from .models import Person, SocialAccountLink
 
 
 admin.site.register(Person)

@@ -1,10 +1,11 @@
-# coding=utf-8
+# coding: utf-8
+
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.views.generic import ListView, CreateView, DetailView
 
-from jobs.models import Job
-from jobs.forms import JobForm
+from .models import Job
+from .forms import JobForm
 
 
 class JobsView(ListView):

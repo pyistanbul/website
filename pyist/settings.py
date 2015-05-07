@@ -1,4 +1,5 @@
-# coding=utf-8
+# coding: utf-8
+
 import os
 
 from django.core.urlresolvers import reverse_lazy
