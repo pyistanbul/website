@@ -1,10 +1,9 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import url
 
-from people.views import PeopleView, CreatePeopleView
+from people.views import PeopleListView, PeopleDetailView
 
 
-urlpatterns = patterns(
-    '',
-    url(r'^$', PeopleView.as_view(), name='index'),
-    url(r'^new$', CreatePeopleView.as_view(), name='new'),
-)
+urlpatterns = [
+    url(r'^$', PeopleListView.as_view(), name='index'),
+    url(r'^(?P<username>[-\w]+)/$', PeopleDetailView.as_view(), name='detail'),
+]

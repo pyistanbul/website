@@ -1,0 +1,27 @@
+{% extends "account/base.html" %}
+
+{% load socialaccount %}
+
+{% block title %}{{ block.super }} - Giriş Yap{% endblock %}
+
+{% block content %}
+
+<h1>Giriş Yap</h1>
+
+<p>
+  <a title="GitHub" class="socialaccount_provider github" href="{% provider_login_url "github" %}">
+    Github hesabınız ile giriş yapabilirsiniz
+  </a> veya <a href="{{ signup_url }}">üye olabilirsiniz.</a>
+</p>
+
+<form class="login" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button class="primaryAction button" type="submit">Giriş Yap</button>
+  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Parolanızı mı unuttunuz?</a>
+</form>
+
+{% endblock %}
