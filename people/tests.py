@@ -46,6 +46,16 @@ class PeopleTest(TestCase):
             reverse('people:detail', args=[self.tester.username]))
         self.assertEqual(response.status_code, 404)
 
+    def test_people_detail_not_found(self):
+        response = self.client.get(
+            reverse('people:detail', args=["test123"]))
+        self.assertEqual(response.status_code, 404)
+
+    def test_people_detail_method_not_allowed(self):
+        response = self.client.post(
+            reverse('people:detail', args=[self.tester.username]))
+        self.assertEqual(response.status_code, 405)
+
     def test_people_detail_password_change_link(self):
         self.tester.set_password('123456')
         self.tester.save()
