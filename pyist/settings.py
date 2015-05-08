@@ -2,6 +2,8 @@
 
 import os
 
+from django.core.urlresolvers import reverse_lazy
+
 PROJECT_PATH = os.path.abspath(os.getcwd())
 
 DEBUG = False
@@ -65,6 +67,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
     'blog.context_processors.export_blog_settings',
+    'allauth.account.context_processors.account',
+    'allauth.socialaccount.context_processors.socialaccount',
 )
 
 ROOT_URLCONF = 'pyist.urls'
@@ -76,7 +80,7 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, 'templates'),
 )
 
-INSTALLED_APPS = (
+DJANGO_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -86,15 +90,30 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.flatpages',
     'django.contrib.sitemaps',
+)
 
+THIRD_PARTY_APPS = (
     'django_gravatar',
     'markitup',
     'nose',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
+)
 
+LOCAL_APPS = (
     'jobs',
     'people',
     'presentations',
     'blog',
+)
+
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 LOGGING = {
@@ -154,3 +173,13 @@ DJANGOSPAM_LOG = 'spam.log'
 
 # Nose Settings
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# auth
+LOGIN_REDIRECT_URL = reverse_lazy('blog:home')
+
+# allauth settings
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = False
+SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_LOGOUT_REDIRECT_URL = reverse_lazy('account_login')

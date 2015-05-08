@@ -1,28 +1,16 @@
 # coding: utf-8
+from django.views.generic import ListView, DetailView
+from django.contrib.auth.models import User
 
-from django.contrib import messages
-from django.core.urlresolvers import reverse
-from django.views.generic import ListView, CreateView
-
-from people.models import Person
-from people.forms import PersonForm
+from .models import Person
 
 
-class PeopleView(ListView):
+class PeopleListView(ListView):
     queryset = Person.objects.active()
 
 
-class CreatePeopleView(CreateView):
-    model = Person
-    form_class = PersonForm
-    success_message = (
-        'Kişi başarıyla eklendi. Editörler tarafından '
-        'onaylandıktan sonra sitede yayınlanacaktır.'
-    )
-
-    def form_valid(self, form):
-        messages.success(self.request, self.success_message)
-        return super(CreatePeopleView, self).form_valid(form)
-
-    def get_success_url(self):
-        return reverse("people:index")
+class PeopleDetailView(DetailView):
+    template_name = "people/person_detail.html"
+    queryset = User.objects.filter(is_active=True)
+    slug_field = "username"
+    slug_url_kwarg = "username"

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from .models import Presentation
 
 
-class PeopleTest(TestCase):
+class PresentationTest(TestCase):
 
     presentation = {
         'title': 'foo bar',

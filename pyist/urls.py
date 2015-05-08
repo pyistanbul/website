@@ -22,6 +22,7 @@ urlpatterns = [
 
     # third party apps
     url(r'^comments/', include('djangospam.cookie.urls')),
+    url(r'^accounts/', include('allauth.urls')),
 
     # admin
     url(r'^admin/', include(admin.site.urls)),

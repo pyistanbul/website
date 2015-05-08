@@ -31,10 +31,27 @@
     <p>Her gün Freenode'daki #pyistanbul kanalında buluşuyoruz.</p>
     <h3>Desteğe ihtiyacım var</h3>
     <p>IRC'de ya da python-istanbul e-posta listesinde sorularınızı sorabilirsiniz.</p>
-    <p><a href="http://groups.google.com/group/python-istanbul" class="button">Listeye Kaydol</a></p>
+    <p>
+      {% if not user.is_authenticated %}
+        <a href="{% url 'account_signup' %}" class="button">
+          Kayıt Ol
+        </a>
+        <a href="{% url 'account_login' %}" class="button">
+          Giriş Yap
+        </a>
+      {% else %}
+        <a href="{% url 'people:detail' user.username %}" class="button">
+          Profilim
+        </a>
+        <a href="{% url 'account_logout' %}" class="button">
+          Çıkış Yap
+        </a>
+      {% endif %}
+    </p>
     <p id="oreilly-ug">
-        <a href="http://oreilly.com/"><img alt="O'Reilly User Groups"
-                                              src="http://cdn.oreillystatic.com/community/promote/ug_ad_250_python.gif"></a>
+        <a href="http://oreilly.com/">
+          <img alt="O'Reilly User Groups" src="http://cdn.oreillystatic.com/community/promote/ug_ad_250_python.gif">
+        </a>
     </p>
 </aside>
 {% endblock %}

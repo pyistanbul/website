@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load gravatar %}
+{% load people_extras %}
+
+{% block title %}{{ block.super }} - {{ object.username }}{% endblock %}
+
+{% block content %}
+    <div style="float: left">
+        {% gravatar object.email 220 %}
+
+        {% if object.links.count > 0 %}
+            <div>
+                {% for link in object.links.all %}
+                    <a href="{{ link.link }}" style="color:#000; text-decoration: none;" target="_blank">
+                        {% fontawesome link.account_type '2x' %}
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if user.is_authenticated and user.username == object.username %}
+            <a href="{% url 'account_change_password' %}" class="button">
+                Parola Değiştir
+            </a>
+        {% endif %}
+    </div>
+    <div style="float:left; margin-left: 20px; font-size: 20px">
+        {% if object.get_full_name %}
+            {{ object.get_full_name }}
+        {% endif %}
+
+        <a href="{% url 'people:detail' object.username %}">
+            @{{ object.username }}
+        </a>
+
+        {% if object.presentations.count > 0 %}
+            <div class="presentations" style="width:200px; margin-top: 10px">
+                <ul>
+                {% for presentation in object.presentations.all %}
+                    <li>
+                        <a href="{{ presentation.link }}" target="_blank">
+                            {{ presentation.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+    </div>
+{% endblock content %}
