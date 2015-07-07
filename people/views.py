@@ -15,10 +15,7 @@ class PeopleView(ListView):
 class CreatePeopleView(CreateView):
     model = Person
     form_class = PersonForm
-    success_message = (
-        'Kişi başarıyla eklendi. Editörler tarafından '
-        'onaylandıktan sonra sitede yayınlanacaktır.'
-    )
+    success_message = 'Kişi başarıyla eklendi.'
 
     def form_valid(self, form):
         messages.success(self.request, self.success_message)
