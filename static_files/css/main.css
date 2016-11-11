@@ -97,8 +97,13 @@ body {
     text-align: center;
     background: #3773a5;
     color: white;
-    padding: 2px;
+    padding: 4px;
     border: none;
+}
+
+.footer-links {
+    display: flex;
+    padding-left: 15px;
 }
 
 button.footer-expand-button:focus {
@@ -179,17 +184,13 @@ dl dd a {
 
 #github {
     background: url(../images/octocat.jpg) no-repeat left -65px;
-    float: right;
-    width: 510px;
-    padding-top: 10px;
-    text-align: right;
-    margin-top: -16px;
-    height: 126px;
+    background-position: right;
+    height: 100%;
 }
 
 #github a {
     color: #3e82ba;
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
 }
 
