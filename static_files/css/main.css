@@ -73,13 +73,38 @@ body {
 }
 
 .footer-container {
-    height: 136px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    height: 24px;
+   -moz-transition:all 0.5s ease-in-out;
+   -o-transition:all 0.5s ease-in-out;
+   transition:all 0.5s ease-in-out;
+   -webkit-transition:all 0.5s ease-in-out;
 }
 
-.footer-container,
+.footer-container.show
+{
+    height: 150px;
+   -moz-transition:all 0.5s ease-in-out;
+   -o-transition:all 0.5s ease-in-out;
+   transition:all 0.5s ease-in-out;
+   -webkit-transition:all 0.5s ease-in-out;
+}
+
+.footer-expand-button {
+    width: 100%;
+    text-align: center;
+    background: #3773a5;
+    color: white;
+    padding: 2px;
+    border: none;
+}
+
+button.footer-expand-button:focus {
+    outline: 0;
+}
+
 .main aside {
     border-top: 20px solid #3773a5;
 }
