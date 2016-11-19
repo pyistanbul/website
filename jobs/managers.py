@@ -9,5 +9,7 @@ class JobsManager(models.Manager):
     def active(self):
         now = timezone.now()
         three_months_ago = now - datetime.timedelta(weeks=3 * 4)
+
         return super(JobsManager, self).get_queryset().filter(
-            date_created__gte=three_months_ago)
+            is_expired=False, date_created__gte=three_months_ago
+        )

@@ -13,11 +13,12 @@ from .managers import JobsManager
 class Job(models.Model):
     title = models.CharField(max_length=255, verbose_name='Başlık')
     company = models.CharField(max_length=255, verbose_name='Şirket Adı')
+    location = models.CharField(max_length=255, verbose_name='Konum')
+    is_expired = models.BooleanField(default=False, verbose_name='Süresi doldu')
     url = models.URLField(max_length=255, verbose_name='Başvuru Linki')
     description = MarkupField(verbose_name='Açıklama',
                               help_text="Markdown formatında yazabilirsiniz.")
-    location = models.CharField(max_length=255, verbose_name='Konum')
-    date_created = models.DateTimeField(default=now)
+    date_created = models.DateTimeField(default=now, verbose_name='Oluşturulma Tarihi')
 
     objects = JobsManager()
 

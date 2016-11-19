@@ -27,6 +27,7 @@ class JobsTest(TestCase):
         self.assertEqual(job.title, 'test title')
         self.assertEqual(job.company, 'test company')
         self.assertEqual(job.url, 'http://example.com/')
+        self.assertFalse(job.is_expired)
         self.assertEqual(job.description.raw, 'example description')
         self.assertEqual(job.location, 'istanbul')
 
@@ -34,3 +35,18 @@ class JobsTest(TestCase):
         job = Job.objects.create(**self.job)
         response = self.client.get(reverse('jobs:detail', args=[job.id]))
         self.assertContains(response, "test title")
+
+    def test_expired(self):
+        job = Job.objects.create(**self.job)
+
+        self.assertFalse(job.is_expired)
+        response = self.client.get(reverse('jobs:detail', args=[job.id]))
+        self.assertEqual(response.status_code, 200)
+
+        job.is_expired = True
+        job.save()
+        self.assertTrue(job.is_expired)
+
+        # Try to access expired job
+        response = self.client.get(reverse('jobs:detail', args=[job.id]))
+        self.assertEqual(response.status_code, 404)

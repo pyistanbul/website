@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from django.contrib import admin
 
 from jobs.models import Job
@@ -11,10 +13,13 @@ class JobAdmin(admin.ModelAdmin):
             'fields': ('title', 'company', 'location'),
         }),
         ('Detay Bilgiler', {
-            'fields': ('url', 'date_created', 'description'),
+            'fields': ('is_expired', 'url', 'date_created', 'description'),
         }),
     )
 
-    list_display = ('title', 'company')
-    list_filter = ('company',)
+    list_display = ('title', 'company', 'is_expired')
+    list_filter = ('is_expired', 'company')
     search_fields = ('title', 'company')
+
+    def has_add_permission(self, request):
+        return False
