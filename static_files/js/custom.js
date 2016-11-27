@@ -3,14 +3,14 @@ $(function() {
     /* Handler show/hide on scroll */
     $(window).scroll(function() {
         if ($(document).scrollTop() > 100) {
-            $('.footer-container').addClass("kg-show");
+            $('.footer-container').addClass("show");
         } else {
-            $('.footer-container').removeClass("kg-show");
+            $('.footer-container').removeClass("show");
         }
     });
 
     /* Handle onClick show/hide */
     $('.footer-container').click(function(){
-        $('.footer-container').toggleClass("kg-show");
+        $('.footer-container').toggleClass("show");
     })
 })
