@@ -24,7 +24,7 @@ class Person(models.Model):
     github_username = models.CharField(
         max_length=255, blank=True, null=True, verbose_name='GitHub',
         help_text='GitHub kullanıcı adınızı giriniz.')
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     objects = PeopleManager()
 

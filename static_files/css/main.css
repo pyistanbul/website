@@ -64,6 +64,7 @@ textarea {
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
     background: url(../images/fiber-papers.png);
+    padding-bottom: 200px;
 }
 
 .wrapper {
@@ -73,6 +74,9 @@ body {
 
 .footer-container {
     height: 136px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-container,
