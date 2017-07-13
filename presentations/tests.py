@@ -15,6 +15,9 @@ class PeopleTest(TestCase):
         'date': '2012-05-15',
     }
 
+    presentation_without_link = presentation.copy()
+    del presentation_without_link['link']
+
     def setUp(self):
         self.tester = User.objects.create(username='tester')
         self.client = Client()
@@ -24,6 +27,10 @@ class PeopleTest(TestCase):
         response = self.client.get(reverse('presentations:index'))
         self.assertContains(response, "foo bar")
         self.assertContains(response, "edibudu.com")
+
+    def test_create(self):
+        Presentation.objects.create(**self.presentation)
+        Presentation.objects.create(**self.presentation_without_link)
 
     def test_grouper(self):
         date = '2012-01-%s'
