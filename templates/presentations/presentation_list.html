@@ -10,10 +10,16 @@
             <ul>
             {% for presentation in date.list %}
                 <li>
-                    <a href="{{ presentation.link }}" target="_blank">
+                    {% if presentation.link %}
+                        <a href="{{ presentation.link }}" target="_blank">
+                            <span>{{ presentation.owner }}</span>
+                            {{ presentation.title }}
+                        </a>
+                    {% else %}
                         <span>{{ presentation.owner }}</span>
                         {{ presentation.title }}
-                    </a></li>
+                    {% endif %}
+                </li>
             {% endfor %}
             </ul>
         {% endfor %}

@@ -206,16 +206,16 @@ header h1#logo {
 
 .presentations ul li {
     margin: 20px;
+    font-size: 20px;
     list-style: none;
 }
 
 .presentations ul li a {
     color: #4691d0;
-    font-size: 20px;
     text-decoration: none;
 }
 
-.presentations ul li a span {
+.presentations ul li span {
     color: gray;
     display: block;
 }
