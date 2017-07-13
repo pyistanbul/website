@@ -9,6 +9,8 @@ class Presentation(models.Model):
     date = models.DateField()
     link = models.URLField(blank=True, null=True)
     description = models.TextField(blank=True)
+    user = models.ForeignKey('auth.User', null=True, blank=True,
+                             related_name='presentations')
 
     class Meta:
         ordering = ['-date']

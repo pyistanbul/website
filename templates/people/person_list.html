@@ -3,11 +3,10 @@
 {% load gravatar %}
 {% load people_extras %}
 
-{% block content %}
+{% block title %}{{ block.super }} - İnsanlar{% endblock %}
 
-    <div class="buttons">
-        <a href="{% url "people:new" %}">Yeni Kişi Ekle</a>
-    </div>
+{% block content %}
+    <h1>İnsanlar</h1>
 
     <ul class="people">
     {% for person in person_list %}
@@ -20,9 +19,21 @@
                     {% endif %}
                 {% endif %}
                 <strong>{{ person.name }}</strong>
-                {% if person.twitter_username %}<a href="http://twitter.com/{{ person.twitter_username }}">{% fontawesome "twitter" %}</a>{% endif %}
-                {% if person.github_username %}<a href="http://github.com/{{ person.github_username }}">{% fontawesome "github" %}</a>{% endif %}
-                {% if person.blog_link %}<a href="{{ person.blog_link }}">{% fontawesome "home" %}</a>{% endif %}
+                {% if person.twitter_username %}
+                  <a href="http://twitter.com/{{ person.twitter_username }}">
+                    {% fontawesome "twitter" %}
+                  </a>
+                {% endif %}
+                {% if person.github_username %}
+                  <a href="http://github.com/{{ person.github_username }}">
+                    {% fontawesome "github" %}
+                  </a>
+                {% endif %}
+                {% if person.blog_link %}
+                  <a href="{{ person.blog_link }}">
+                      {% fontawesome "home" %}
+                  </a>
+                {% endif %}
             </p>
         </li>
     {% endfor %}
