@@ -25,6 +25,12 @@ class PeopleTest(TestCase):
         self.assertContains(response, "foo bar")
         self.assertContains(response, "edibudu.com")
 
+    def test_without_link(self):
+        presentation_data = self.presentation.copy()
+        del presentation_data['link']
+        p_without_link = Presentation.objects.create(**presentation_data)
+        self.assertIsNone(p_without_link.link)
+
     def test_grouper(self):
         date = '2012-01-%s'
         for i in range(10, 15):
