@@ -155,7 +155,7 @@ dl dd a {
     padding-top: 10px;
     text-align: right;
     margin-top: -16px;
-    height: 126px;
+    height: 152px;
 }
 
 #github a {
@@ -354,7 +354,7 @@ ul.people li .badge:after {
 form label {
     display: block;
     float: left;
-    width: 120px;
+    width: 180px;
     color: #303030;
     cursor: pointer;
     padding-top: 5px;
@@ -558,4 +558,9 @@ ul.people li p a:hover {
     h3 {
         page-break-after: avoid;
     }
+}
+
+.messages li {
+    font-size: 22px;
+    list-style-type: none;
 }

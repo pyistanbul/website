@@ -40,3 +40,17 @@ class PeopleTest(TestCase):
         response = self.client.get(reverse('presentations:index'))
         for i in range(10, 15):
             self.assertContains(response, "%s" % date % i)
+
+    def test_request_form(self):
+        self.path = reverse('presentations:request')
+        form_data = {"presenter_name": "ali bey", "presenter_email": "a@b.com",
+                     "presenter_twitter_username": "@ali",
+                     "presenter_github_username": "@ali",
+                     "presentation_title": "django 2.1",
+                     "presentation_type": "sunum",
+                     "presentation_duration": "30",
+                     "presentation_content": "will be fun.",
+                     }
+        response = self.client.post(self.path, form_data)
+        print(response.content)
+        self.assertEqual(response.status_code, 302)
