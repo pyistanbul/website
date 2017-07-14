@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Sunum Başvuru Formu</h3>
+    {% include 'djangospam/cookieform.html' %}
+    <form action="{% url "presentations:request" %}" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="line">
+            {{ field.errors }}
+            {{ field.label_tag }}
+            <div class="field">
+                {{ field }}
+                <p class="help" style="display: inline; margin-left: 0;">{{ field.help_text }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    <footer>
+        <input class="button" type="submit" value="Kaydet">
+    </footer>
+    </form>
+{% endblock %}
