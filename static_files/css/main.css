@@ -1,0 +1,234 @@
+/* base header */
+
+header {
+	width: 100%;
+	height: 90px;
+	background-color: rgba(48, 40, 143, 0.9);
+}
+
+header .navbar {
+	padding: 0;
+	line-height: 90px;
+}
+
+.nav-item {
+	position: relative;
+	height: 90px;
+	margin-right: 40px;
+}
+
+.nav-item:last-child {
+	margin-right: 0;
+}
+
+.nav-item.active:after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	border-bottom: 8px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active a {
+	color: #ffd646;
+	font-family: 'Montserrat';
+}
+
+.nav-item a {
+	color: #fff;
+}
+
+.nav-item a:hover {
+	color: #ffd646;
+	text-decoration: none;
+}
+
+.nav-item.logo {
+	display: table-cell;
+}
+
+.nav-item.logo a {
+	width: 132px;
+	height: 153px;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: #fff;
+	box-shadow: 0 3px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+/* base footer */
+
+footer {
+	padding: 100px 0 30px;
+}
+
+footer form button {
+	font-family: 'Roboto';
+	font-size: 18px;
+	color: #fff;
+	border-radius: 0;
+	background-color: #3023ae;
+}
+
+footer .row .col-title {
+	color: #9b9b9b;
+	font-size: 16px;
+	font-family: 'Montserrat';
+	margin-bottom: 30px;
+}
+
+footer .github {
+	color: #9b9b9b;
+	font-size: 24px;
+	font-family: 'Roboto';
+}
+
+footer .github:hover {
+	text-decoration: none;
+}
+
+footer .github:before {
+	content: "\f09b";
+	width: 61px;
+	height: 60px;
+	font-family: "FontAwesome";
+}
+
+footer .copyright {
+	margin-top: 110px;
+	padding-top: 20px;
+	border-top: 1px solid #e7e7e7;
+}
+
+footer .copyright span {
+	position: relative;
+	color: #9b9b9b;
+	font-size: 13px;
+	font-family: 'Roboto';
+}
+
+footer .copyright span:before {
+	content: "";
+	top: -6px;
+	left: -40px;
+	position: absolute;
+	width: 31px;
+	height: 30px;
+	background: url("../images/footer-logo.png") no-repeat 0 0;
+}
+
+/* base page */
+.page {
+	background-color: #e7e7e7;
+}
+
+.cover {
+	height: 160px;
+	background-color: rgba(51, 51, 51, 0.8);
+}
+
+.cover h2 {
+	color: #ffd646;
+	font-size: 34px;
+	line-height: 40px;
+	margin-top: 70px;
+	font-weight: 700;
+	font-family: 'Montserrat';
+}
+
+
+/* people page */
+.people {
+	padding: 0;
+	margin-top: -20px;
+}
+
+.people > li {
+	float: left;
+	text-align: center;
+	margin-bottom: 20px;
+	list-style-type: none;
+}
+
+.people > li img {
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+}
+
+.people .p-name {
+	font-size: 26px;
+	color: #404040;
+	margin-top: 15px;
+	font-family: 'Roboto';
+}
+
+.people .p-company {
+	font-size: 16;
+	line-height: 24px;
+	color: #9b9b9b;
+	margin-bottom: 5px;
+	font-family: 'Roboto';
+}
+
+.people .p-company span {
+	display: block;
+}
+
+.people .p-social {
+	padding: 0;
+	display: inline-block;
+}
+
+.people .p-social li {
+	float: left;
+	margin-right: 13px;
+	list-style-type: none;
+}
+
+.people .p-social a {
+	color: #3486ff;
+	font-size: 21px;
+	text-decoration: none;
+}
+
+.people .p-social .a-twitter a:before {
+	content: "\f099";
+	font-family: "FontAwesome";
+}
+
+.people .p-social .a-github a:before {
+	content: "\f099";
+	font-family: "FontAwesome";
+}
+
+.people .p-social .a-twitter a:before {
+	content: "\f09b";
+	font-family: "FontAwesome";
+}
+
+.people .p-social .a-blog a:before {
+	content: "\f015";
+	font-family: "FontAwesome";
+}
+
+.people .new-person-btn {
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: #d8d8d8;
+	margin: 0 auto;
+	display: table;
+}
+
+.people .new-person-btn:before {
+	color: #b9b9b9;
+	content: "\f067";
+	font-size: 80px;
+	font-family: "FontAwesome";
+	vertical-align: middle;
+	display: table-cell;
+}
