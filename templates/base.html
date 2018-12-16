@@ -16,6 +16,13 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link href="{% url 'blog:rss-feed' %}" type="application/rss+xml" rel="alternate" />
     <!--[if lt IE 9]><script src="{% static 'js/html5shiv.js' %}"></script><![endif]-->
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    {% block head %}
+    {% endblock head %}
 </head>
 <body>
     <!--
@@ -28,8 +35,57 @@
         </p>
     <![endif]
     -->
-    <p>Hello world! <i class="fa fa-hand-peace-o" aria-hidden="true"></i></p>
 
+    <header>
+        <nav class="navbar navbar-expand-sm">
+            <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
+                <div class="collapse navbar-collapse text-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#">NEDİR?</a></li>
+                        <li class="nav-item"><a href="#">SUNUMLAR</a></li>
+                        <li class="nav-item logo">
+                            <a href="{% url 'blog:home' %}">
+                                <img src="{% static 'images/logo.svg' %}" alt="Pyistanbul">
+                            </a>
+                        </li>
+                        <li class="nav-item active"><a href="#">İNSANLAR</a></li>
+                        <li class="nav-item"><a href="#">İŞ İLANLARI</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block cover %}
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="col-title">NEWSLETTER</div>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Type your email address"> 
+                        </div>
+                        <button class="btn btn-block">Send</button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-title">GITHUB</div>
+                    <a class="github" href="#">pyistanbul</a>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-title">CONNECT WITH US</div>
+                </div>
+            </div>
+            <div class="row justify-content-center copyright"><span>2015 © PyIstanbul</span></div>
+        </div>
+    </footer>
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script>
