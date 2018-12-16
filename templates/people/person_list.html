@@ -1,31 +1,41 @@
-{% extends "base.html" %}
+{% extends "base_page.html" %}
 
 {% load gravatar %}
 {% load people_extras %}
 
-{% block content %}
-
-    <div class="buttons">
-        <a href="{% url "people:new" %}">Yeni Kişi Ekle</a>
+{% block page %}
+    <div class="container">
+        <div class="row">
+            <ul class="col-md-12 people">
+            {% for person in person_list %}
+                <li class="col-md-3 {% if person.badge %}{{ person.badge }}{% endif %}">
+                    {% gravatar person.email 100 %}
+                    <div class="p-name">{{ person.name }}</div>
+                    <div class="p-company">software developer <span>@adphorus</span></div>
+                    <ul class="p-social">
+                        {% if person.twitter_username %}
+                            <li class="a-twitter">
+                                <a href="http://twitter.com/{{ person.twitter_username }}"></a>
+                            </li>
+                        {% endif %}
+                        {% if person.github_username %}
+                            <li class="a-github">
+                                <a href="http://github.com/{{ person.github_username }}"></a>
+                            </li>
+                        {% endif %}
+                        {% if person.blog_link %}
+                            <li class="a-blog">
+                                <a href="{{ person.blog_link }}"></a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </li>
+            {% endfor %}
+                <li class="col-md-3">
+                    <div class="new-person-btn"></div>
+                    <div class="p-name">Yeni Kişi Ekle</div>
+                </li>
+            </ul>
+        </div>  
     </div>
-
-    <ul class="people">
-    {% for person in person_list %}
-        <li {% if person.badge %}class="{{ person.badge }}"{% endif %}>
-            {% gravatar person.email 100 %}
-            <p>
-                {% if person.badge %}
-                    {% if person.badge == "huseyinalbing" %}
-                        <a href="http://500t.org/?o=huseyinalb" class="badge"></a>
-                    {% endif %}
-                {% endif %}
-                <strong>{{ person.name }}</strong>
-                {% if person.twitter_username %}<a href="http://twitter.com/{{ person.twitter_username }}">{% fontawesome "twitter" %}</a>{% endif %}
-                {% if person.github_username %}<a href="http://github.com/{{ person.github_username }}">{% fontawesome "github" %}</a>{% endif %}
-                {% if person.blog_link %}<a href="{{ person.blog_link }}">{% fontawesome "home" %}</a>{% endif %}
-            </p>
-        </li>
-    {% endfor %}
-    </ul>
-
 {% endblock %}
