@@ -61,7 +61,7 @@
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#pyistanbul">NEDİR?</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {% if page == 'presentation' %}active{% endif %}">
                             <a href="{% url 'presentations:index' %}">SUNUMLAR</a>
                         </li>
                         <li class="nav-item logo">
@@ -69,8 +69,8 @@
                                 <img src="{% static 'images/logo.svg' %}" alt="Pyistanbul">
                             </a>
                         </li>
-                        <li class="nav-item active"><a href="{% url 'people:index' %}">İNSANLAR</a></li>
-                        <li class="nav-item"><a href="#">İŞ İLANLARI</a></li>
+                        <li class="nav-item {% if page == 'people' %}active{% endif %}"><a href="{% url 'people:index' %}">İNSANLAR</a></li>
+                        <li class="nav-item {% if page == 'blog' %}active{% endif %}"><a href="#">BLOG</a></li>
                     </ul>
                 </div>
             </div>

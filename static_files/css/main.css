@@ -372,7 +372,7 @@ footer .copyright span:before {
 	height: 120px;
 	line-height: 120px;
 	text-align: center;
-	margin: 0;
+	margin: 0 0 20px 0;
 	background-color: rgba(238, 238, 238, 0.9);
 }
 
@@ -399,11 +399,11 @@ footer .copyright span:before {
 }
 
 .event .presentations {
-	padding: 20px 20px 0;
+	padding: 0 20px;
 }
 
 .event .presentations .presentation {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .event .presentations .presentation-title {

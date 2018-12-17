@@ -21,3 +21,8 @@ class PeopleView(ListView):
 
     def get_success_url(self):
         return reverse("people:index")
+
+    def get_context_data(self, **kwargs):
+        context = super(PeopleView, self).get_context_data(**kwargs)
+        context['page'] = 'people'
+        return context
