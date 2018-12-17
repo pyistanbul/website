@@ -18,8 +18,8 @@
     <!--[if lt IE 9]><script src="{% static 'js/html5shiv.js' %}"></script><![endif]-->
 
     <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
     {% block head %}
     {% endblock head %}
@@ -35,20 +35,41 @@
         </p>
     <![endif]
     -->
-
+    <div class="collapse" id="pyistanbul">
+        <div class="container fixed-info">
+            <div class="row">
+                <div class="col-md-4 info what">
+                    <div class="sub-title">Nedir?</div>
+                    <p>İstanbul'daki Python programcıları topluluğudur. Eğer Python ilginizi çekiyorsa siz de bu topluluğa katılabilirsiniz.</p>
+                </div>
+                <div class="col-md-4 info contact">
+                    <div class="sub-title">Nasıl iletişim kurabilirim?</div>
+                    <p>Her gün Freenode'daki <a href="#">#pyistanbul</a> kanalında buluşuyoruz.</p>
+                </div>
+                <div class="col-md-4 info support">
+                    <div class="sub-title">Desteğe ihtiyacım var</div>
+                    <p>IRC'de ya da python-istanbul e-posta listesinde sorularınızı sorabilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <header>
         <nav class="navbar navbar-expand-sm">
             <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
-                <div class="collapse navbar-collapse text-center">
+                <div class="text-center">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#">NEDİR?</a></li>
-                        <li class="nav-item"><a href="#">SUNUMLAR</a></li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#pyistanbul">NEDİR?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'presentations:index' %}">SUNUMLAR</a>
+                        </li>
                         <li class="nav-item logo">
                             <a href="{% url 'blog:home' %}">
                                 <img src="{% static 'images/logo.svg' %}" alt="Pyistanbul">
                             </a>
                         </li>
-                        <li class="nav-item active"><a href="#">İNSANLAR</a></li>
+                        <li class="nav-item active"><a href="{% url 'people:index' %}">İNSANLAR</a></li>
                         <li class="nav-item"><a href="#">İŞ İLANLARI</a></li>
                     </ul>
                 </div>
@@ -87,6 +108,7 @@
         </div>
     </footer>
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
