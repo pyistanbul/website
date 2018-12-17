@@ -48,8 +48,7 @@
                     {% include 'djangospam/cookieform.html' %}
                     <form action="{% url 'people:index' %}" method="post">
                         {% csrf_token %}
-                        {{ form }}
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label for="form-name">Ad ve Soyad</label>
                             <input type="text" class="form-control" id="name" placeholder="Ad ve Soyad">
                         </div>
@@ -69,7 +68,7 @@
                         <div class="form-group">
                             <label for="form-github">Github</label>
                             <input type="text" class="form-control" id="form-github" placeholder="@pyistanbul">
-                        </div> -->
+                        </div>
                         <button type="submit" class="btn btn-primary btn-block">Submit</button>
                     </form>
                 </div>
