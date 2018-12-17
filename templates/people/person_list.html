@@ -1,41 +1,80 @@
 {% extends "base_page.html" %}
 
 {% load gravatar %}
-{% load people_extras %}
 
 {% block page %}
-    <div class="container">
+    <div class="people top-shift">
         <div class="row">
-            <ul class="col-md-12 people">
             {% for person in person_list %}
-                <li class="col-md-3 {% if person.badge %}{{ person.badge }}{% endif %}">
-                    {% gravatar person.email 100 %}
-                    <div class="p-name">{{ person.name }}</div>
-                    <div class="p-company">software developer <span>@adphorus</span></div>
-                    <ul class="p-social">
-                        {% if person.twitter_username %}
-                            <li class="a-twitter">
-                                <a href="http://twitter.com/{{ person.twitter_username }}"></a>
-                            </li>
-                        {% endif %}
-                        {% if person.github_username %}
-                            <li class="a-github">
-                                <a href="http://github.com/{{ person.github_username }}"></a>
-                            </li>
-                        {% endif %}
-                        {% if person.blog_link %}
-                            <li class="a-blog">
-                                <a href="{{ person.blog_link }}"></a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </li>
+            <div class="col-md-3 person">
+                {% gravatar person.email 100 %}
+                <div class="p-name">{{ person.name }}</div>
+                <div class="p-company">software developer <span>@adphorus</span></div>
+                <ul class="p-social">
+                    {% if person.twitter_username %}
+                        <li class="a-twitter">
+                            <a href="http://twitter.com/{{ person.twitter_username }}"></a>
+                        </li>
+                    {% endif %}
+                    {% if person.github_username %}
+                        <li class="a-github">
+                            <a href="http://github.com/{{ person.github_username }}"></a>
+                        </li>
+                    {% endif %}
+                    {% if person.blog_link %}
+                        <li class="a-blog">
+                            <a href="{{ person.blog_link }}"></a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
             {% endfor %}
-                <li class="col-md-3">
-                    <div class="new-person-btn"></div>
-                    <div class="p-name">Yeni Kişi Ekle</div>
-                </li>
-            </ul>
-        </div>  
+            <div class="col-md-3 person">
+                <div class="new-person-btn" data-toggle="modal" data-target="#new-person-form"></div>
+                <div class="p-name">Yeni Kişi Ekle</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="new-person-form" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Yeni Kişi</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    {% include 'djangospam/cookieform.html' %}
+                    <form action="{% url 'people:index' %}" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <!-- <div class="form-group">
+                            <label for="form-name">Ad ve Soyad</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ad ve Soyad">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Email</label>
+                            <input type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="example@domain.com">
+                            <small id="emailHelp" class="form-text text-muted">Gravatar için gerekmektedir, sitede gözükmeyecektir.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-blog">Blog URL</label>
+                            <input type="text" class="form-control" id="form-blog" placeholder="http://">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-twitter">Twitter</label>
+                            <input type="text" class="form-control" id="form-twitter" placeholder="@pyistanbul">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-github">Github</label>
+                            <input type="text" class="form-control" id="form-github" placeholder="@pyistanbul">
+                        </div> -->
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
     </div>
 {% endblock %}

@@ -1,10 +1,9 @@
 from django.conf.urls import patterns, include, url
 
-from .views import PeopleView, CreatePeopleView
+from .views import PeopleView
 
 
 urlpatterns = patterns(
     '',
-    url(r'^$', PeopleView.as_view(), name='index'),
-    url(r'^new$', CreatePeopleView.as_view(), name='new'),
+    url(r'^$', PeopleView.as_view(), name='index')
 )
