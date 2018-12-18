@@ -38,11 +38,6 @@ STATICFILES_FINDERS = (
 
 SECRET_KEY = '#1f*6@=e@*7t1yk_!gef=jn!pc5#mv_%)=8__y8*gi0&0t7=u('
 
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
-
 MIDDLEWARE = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -52,6 +47,13 @@ MIDDLEWARE = (
     # 'djangospam.cookie.middleware.SpamCookieMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
+
+ROOT_URLCONF = 'pyist.urls'
+
+
+WSGI_APPLICATION = 'pyist.wsgi.application'
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
