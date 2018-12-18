@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Sunum önerilerinizi bize iletebilirsiniz</h3>
+    <form action="" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="line">
+            {{ field.errors }}
+            {{ field.label_tag }}
+            <div class="field">
+                {{ field }}
+                <p class="help">{{ field.help_text }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    <footer>
+        <input class="button" type="submit" value="Kaydet">
+    </footer>
+    </form>
+
+{% endblock %}
