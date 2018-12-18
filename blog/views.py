@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from django.views.generic.detail import DetailView
 from django.conf import settings
 
@@ -14,3 +14,7 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     template_name = "blog/blog_detail.html"
     queryset = Post.objects.active()
+
+
+class HakkimizdaView(TemplateView):
+    template_name = "hakkimizda.html"
