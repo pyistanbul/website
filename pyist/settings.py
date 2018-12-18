@@ -40,18 +40,19 @@ STATICFILES_FINDERS = (
 
 SECRET_KEY = '#1f*6@=e@*7t1yk_!gef=jn!pc5#mv_%)=8__y8*gi0&0t7=u('
 
+
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'djangospam.cookie.middleware.SpamCookieMiddleware',
+    # 'djangospam.cookie.middleware.SpamCookieMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
@@ -76,6 +77,23 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, 'templates'),
 )
 
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(PROJECT_PATH, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -91,7 +109,6 @@ INSTALLED_APPS = (
     'markitup',
     'nose',
 
-    'jobs',
     'people',
     'presentations',
     'blog',
@@ -149,8 +166,8 @@ BLOG = {
 }
 
 # Djangospam Settings
-DJANGOSPAM_COOKIE_KEY = 'argumentclinic'
-DJANGOSPAM_LOG = 'spam.log'
+# DJANGOSPAM_COOKIE_KEY = 'argumentclinic'
+# DJANGOSPAM_LOG = 'spam.log'
 
 # Nose Settings
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
