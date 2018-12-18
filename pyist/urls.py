@@ -26,6 +26,7 @@ urlpatterns = [
 
     # third party apps
     # path(r'^comments/', include('djangospam.cookie.urls')),
+    path('markdownx/', include('markdownx.urls')),
 
     # admin
     path('admin/', admin.site.urls),

@@ -3,5 +3,6 @@ Django==2.1.2
 django-gravatar2==1.1.4
 django-nose==1.4.6
 gunicorn==19.9.0
+django-markdownx==2.0.28
 https://github.com/zsiciarz/django-markitup/archive/django2.0.zip#egg=django-markitup
 # djangospam==1.1.3

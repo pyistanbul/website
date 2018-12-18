@@ -9,7 +9,7 @@
                <h3><a href="{{ post.get_absolute_url }}">{{ post }}</a></h3>
            </header>
            {% autoescape off %}
-             {{ post.description.rendered }}
+             {{ post.description_html|safe }}
           {% endautoescape %}
        </div>
     {% endfor %}

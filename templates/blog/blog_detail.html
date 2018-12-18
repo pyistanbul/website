@@ -9,7 +9,7 @@
             <h3>{{ object.title }}</h3>
         </header>
         {% autoescape off %}
-          {{ object.description.rendered }}
+          {{ object.description_html|safe }}
         {% endautoescape %}
     </div>
 

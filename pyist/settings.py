@@ -106,7 +106,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
 
     'django_gravatar',
-    'markitup',
+    'markdownx',
     'nose',
 
     'people',
@@ -150,6 +150,7 @@ DATABASES = {
     }
 }
 
+# @TODO Should be removed after moving to markdownx package
 # Markitup Settings
 MARKITUP_SET = 'markitup/sets/markdown'
 MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})

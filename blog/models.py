@@ -4,7 +4,8 @@ from django.db import models
 from django.utils.encoding import smart_text, python_2_unicode_compatible
 from django.conf import settings
 
-from markitup.fields import MarkupField
+from markdownx.models import MarkdownxField
+from markdownx.utils import markdownify
 
 from .managers import BlogManager
 
@@ -13,7 +14,7 @@ from .managers import BlogManager
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
-    description = MarkupField()
+    description = MarkdownxField()
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
     is_published = models.BooleanField(default=True)
@@ -26,6 +27,10 @@ class Post(models.Model):
 
     def __str__(self):
         return smart_text(self.title)
+
+    @property
+    def description_html(self):
+        return markdownify(self.description)
 
     def get_absolute_url(self):
         from django.urls import reverse
