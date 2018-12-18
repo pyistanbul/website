@@ -4,24 +4,41 @@
 
 ## Installation
 
-```sh
-öncelikle repomuzu local makinemize kopyalıyoruz
-$ git clone https://github.com/pyistanbul/website.git
-cd komutu sayesinde klonladığımız klasör içerisine giriyoruz
-$ cd website/
-çalışmalarımızın izole bir şekilde kalması için virtualenv kullanarak kendi çalışma ortamızı oluşturuyoruz
-$ virtualenv venv
-source yada . komutu ile oluşturduğumuz çalışma ortamımızı aktive ediyoruz
-$ . venv/bin/activate
-pip python paket yöneticisi ile conf/requirments.txt dosyası içerisinde bulunan projenin bağımlılıklarını kuruyoruz
-$ pip install -r conf/requirements.txt 
-settings_local.py dosyasına erişim sağlayabilmek istiyoruz bu nedenle .dist uzantısından kurtulmak için cp komutundan faydalanıyoruz
-$ cp pyist/settings_local.py.dist pyist/settings_local.py
-veritabanı modellerimizi migrate komutu ile gerçekleştirmiş oluyoruz
-$ python manage.py migrate
-runserver komutu ile projemizi local makinede çalıştırmış oluyoruz
-$ python manage.py runserver
 
+öncelikle repomuzu local makinamıza kopyalıyoruz
+```sh
+$ git clone https://github.com/pyistanbul/website.git
+```
+cd komutu sayesinde klonladığımız klasör içerisine giriyoruz
+```sh
+$ cd website/
+```
+çalışmalarımızın izole bir şekilde kalması için virtualenv kullanarak kendi çalışma ortamızı oluşturuyoruz
+```sh
+$ virtualenv venv
+```
+source yada . komutu ile oluşturduğumuz çalışma ortamımızı aktive ediyoruz
+```sh
+$ . venv/bin/activate
+```
+pip python paket yöneticisi ile conf/requirments.txt dosyası içerisinde bulunan projenin bağımlılıklarını kuruyoruz
+```sh
+$ pip install -r conf/requirements.txt 
+```
+settings_local.py dosyasına erişim sağlayabilmek istiyoruz bu nedenle .dist uzantısından kurtulmak için cp komutundan faydalanıyoruz
+```sh
+$ cp pyist/settings_local.py.dist pyist/settings_local.py
+```
+veritabanı modellerimizi migrate komutu ile gerçekleştirmiş oluyoruz
+```sh
+$ python manage.py migrate
+```
+runserver komutu ile projemizi local makinede çalıştırmış oluyoruz
+```sh
+$ python manage.py runserver
+```
+
+```sh
 $ open http://127.0.0.1:8000/
 ```
 
