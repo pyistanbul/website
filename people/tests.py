@@ -1,4 +1,4 @@
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 
@@ -27,7 +27,7 @@ class PeopleTest(TestCase):
         person = Person.objects.get()
         self.assertEqual(person.name, 'edi budu')
         self.assertEqual(person.email, 'edi@budu.com')
-        self.assertEqual(person.blog_link, 'http://edibudu.com/')
+        self.assertEqual(person.blog_link, 'http://edibudu.com')
         self.assertEqual(person.twitter_username, 'edibudu')
         self.assertEqual(person.github_username, 'edicat')
 
