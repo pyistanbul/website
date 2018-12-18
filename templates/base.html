@@ -4,7 +4,10 @@
 <html lang="tr">
 <head>
     <meta charset="utf-8">
-    <title>{% block title %}{{ BLOG_SETTINGS.TITLE }}{% endblock %}</title>
+    <title>
+        {% block title %}{{ BLOG_SETTINGS.TITLE }}{% endblock %}
+        {% if page_title %}&mdash; {{ page_title }}{% endif %}
+    </title>
     <meta name="description" content="{{ BLOG_SETTINGS.DESCRIPTION }}">
     <link rel="shortcut icon" type="image/favicon" href="{% static 'images/favicon.ico' %}">
 
@@ -53,7 +56,7 @@
             </div>
         </div>
     </div>
-    <header>
+    <header class="{% if page == 'home' %}_home{% endif %}">
         <nav class="navbar navbar-expand-sm">
             <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
                 <div class="text-center">
