@@ -3,9 +3,9 @@
 from django.urls import reverse
 from django.views.generic import ListView, CreateView
 
-from pyist.mixins import SuccessMessageMixin
 from people.models import Person
 from people.forms import PersonForm
+from pyist.mixins import SuccessMessageMixin
 
 
 class PeopleView(ListView):
