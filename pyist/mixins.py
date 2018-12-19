@@ -10,6 +10,5 @@ class SuccessMessageMixin:
             raise ImproperlyConfigured(
                 'No message to show. Provide a success_message.'
             )
-
         messages.success(self.request, self.success_message)
         return super().form_valid(form)
