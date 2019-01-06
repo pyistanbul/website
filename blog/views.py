@@ -10,6 +10,11 @@ class BlogListView(ListView):
     queryset = Post.objects.active()
     paginate_by = settings.BLOG['LIMIT']
 
+    def get_context_data(self, **kwargs):
+        context = super(BlogListView, self).get_context_data(**kwargs)
+        context['page'] = 'home'
+        return context
+
 
 class BlogDetailView(DetailView):
     template_name = "blog/blog_detail.html"
