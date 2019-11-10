@@ -7,9 +7,8 @@
 ```sh
 $ git clone https://github.com/pyistanbul/website.git
 $ cd website/
-$ virtualenv venv
-$ . venv/bin/activate
-$ pip install -r conf/requirements.txt
+$ pipenv install
+$ pipenv shell
 $ cp pyist/settings_local.py.dist pyist/settings_local.py
 $ python manage.py migrate
 $ python manage.py runserver
