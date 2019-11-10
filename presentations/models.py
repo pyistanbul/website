@@ -1,8 +1,6 @@
 from django.db import models
-from django.utils.encoding import smart_text, python_2_unicode_compatible
 
 
-@python_2_unicode_compatible
 class Presentation(models.Model):
     title = models.CharField(max_length=255)
     owner = models.CharField(max_length=255)
@@ -14,4 +12,4 @@ class Presentation(models.Model):
         ordering = ['-date']
 
     def __str__(self):
-        return smart_text(self.title)
+        return self.title
