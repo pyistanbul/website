@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
-from django.utils.encoding import smart_text
 from markitup.fields import MarkupField
 
 from .managers import BlogManager
@@ -22,7 +21,7 @@ class Post(models.Model):
         ordering = ["-created_at"]
 
     def __str__(self):
-        return smart_text(self.title)
+        return self.title
 
     def get_absolute_url(self):
         return reverse('blog:detail', args=[str(self.slug)])
