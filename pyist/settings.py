@@ -91,7 +91,6 @@ INSTALLED_APPS = (
     'markitup',
     'nose',
 
-    'jobs',
     'people',
     'presentations',
     'blog',
