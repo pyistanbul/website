@@ -14,7 +14,6 @@ urlpatterns = [
     # apps
     url(r'^', include('blog.urls', namespace="blog")),
     url(r'^people/', include('people.urls', namespace="people")),
-    url(r'^jobs/', include('jobs.urls', namespace="jobs")),
     url(r'^presentations/', include('presentations.urls',
                                     namespace="presentations")),
     url(r'^sitemap\.xml$', index, {'sitemaps': sitemaps}),
