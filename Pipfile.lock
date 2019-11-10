@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "520a2ff19437159140cd5fb266c25250b7edae78f26b94d4c62df0c6e9fc3299"
+            "sha256": "680eb0b66a83379d1622b347b1a4a0a30b857faf68a1c523ff9735b38b58c162"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -33,12 +33,8 @@
             "version": "==1.4.2"
         },
         "django-markitup": {
-            "hashes": [
-                "sha256:7b9485ed1bb610da071e878eab3572612f585e88269af1504c4dc5100400b8d4",
-                "sha256:fa7c2cff142a0f388c4486887450e9a320d6203cba0618d750ebc0736b2db690"
-            ],
-            "index": "pypi",
-            "version": "==3.0.0"
+            "git": "https://github.com/zsiciarz/django-markitup/",
+            "ref": "091deb9226a2c20fb5299a0c9547e16eabbbe72c"
         },
         "django-nose": {
             "hashes": [
