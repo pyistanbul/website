@@ -1,8 +1,10 @@
-from django.conf.urls import url
+from django.urls import path
 
 from .views import PresentationsView
 
 
+app_name = "presentations"
+
 urlpatterns = [
-    url(r'^$', PresentationsView.as_view(), name='index'),
+    path('', PresentationsView.as_view(), name='index'),
 ]

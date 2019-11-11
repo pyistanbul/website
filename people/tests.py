@@ -24,10 +24,11 @@ class PeopleTest(TestCase):
         response = self.client.post(reverse('people:new'), self.person)
         self.assertRedirects(response, reverse('people:index'))
         self.assertTrue(Person.objects.exists())
+
         person = Person.objects.get()
         self.assertEqual(person.name, 'edi budu')
         self.assertEqual(person.email, 'edi@budu.com')
-        self.assertEqual(person.blog_link, 'http://edibudu.com/')
+        self.assertEqual(person.blog_link, 'http://edibudu.com')
         self.assertEqual(person.twitter_username, 'edibudu')
         self.assertEqual(person.github_username, 'edicat')
 

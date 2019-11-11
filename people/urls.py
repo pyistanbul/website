@@ -1,10 +1,10 @@
-from django.conf.urls import patterns, include, url
+from django.urls import path
 
-from .views import PeopleView, CreatePeopleView
+from .views import CreatePeopleView, PeopleView
 
+app_name = "people"
 
-urlpatterns = patterns(
-    '',
-    url(r'^$', PeopleView.as_view(), name='index'),
-    url(r'^new$', CreatePeopleView.as_view(), name='new'),
-)
+urlpatterns = [
+    path('', PeopleView.as_view(), name='index'),
+    path('new/', CreatePeopleView.as_view(), name='new'),
+]
