@@ -3,5 +3,5 @@ django==1.7.5
 django-gravatar2==1.1.4
 django-markitup==2.2.2
 django-nose==1.3
-gunicorn==19.3
+gunicorn==19.5.0
 djangospam==1.1.3
