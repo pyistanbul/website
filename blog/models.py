@@ -1,15 +1,11 @@
-# coding: utf-8
-
-from django.db import models
-from django.utils.encoding import smart_text, python_2_unicode_compatible
 from django.conf import settings
-
+from django.db import models
+from django.urls import reverse
 from markitup.fields import MarkupField
 
 from .managers import BlogManager
 
 
-@python_2_unicode_compatible
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
@@ -17,7 +13,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
     is_published = models.BooleanField(default=True)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     objects = BlogManager()
 
@@ -25,8 +21,7 @@ class Post(models.Model):
         ordering = ["-created_at"]
 
     def __str__(self):
-        return smart_text(self.title)
+        return self.title
 
-    @models.permalink
     def get_absolute_url(self):
-        return 'blog:detail', [self.slug]
+        return reverse('blog:detail', args=[str(self.slug)])
