@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "680eb0b66a83379d1622b347b1a4a0a30b857faf68a1c523ff9735b38b58c162"
+            "sha256": "66d4bf15c325669f1a30dfe208f67975e77f96dedbf523c61aff3a88bdc74542"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -43,14 +43,6 @@
             ],
             "index": "pypi",
             "version": "==1.4.6"
-        },
-        "djangospam": {
-            "hashes": [
-                "sha256:1ccb7ff8cdce19553511b235c18ed19d9eabe6968b1cd192692087373b03df5d",
-                "sha256:de0c6e4c9fc9b07cb2fab326002b647f37da57a60207bb0fb0b9e22d013d41cd"
-            ],
-            "index": "pypi",
-            "version": "==1.1.4"
         },
         "gunicorn": {
             "hashes": [

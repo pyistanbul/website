@@ -49,7 +49,7 @@ MIDDLEWARE = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'djangospam.cookie.middleware.SpamCookieMiddleware',
+    # 'djangospam.cookie.middleware.SpamCookieMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 TEMPLATES = [
@@ -145,8 +145,8 @@ BLOG = {
 }
 
 # Djangospam Settings
-DJANGOSPAM_COOKIE_KEY = 'argumentclinic'
-DJANGOSPAM_LOG = 'spam.log'
+# DJANGOSPAM_COOKIE_KEY = 'argumentclinic'
+# DJANGOSPAM_LOG = 'spam.log'
 
 # Nose Settings
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

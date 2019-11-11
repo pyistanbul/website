@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^sitemap-(?P<section>.+)\.xml$', sitemap, {'sitemaps': sitemaps}),
 
     # third party apps
-    url(r'^comments/', include('djangospam.cookie.urls')),
+    # path("comments/", include('djangospam.cookie.urls')),
 
     # admin
     url(r'^admin/', include(admin.site.urls)),
