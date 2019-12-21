@@ -6,12 +6,12 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "==2.2.8"
+django = "==2.2.9"
 # djangospam = "==1.1.4"
 django-gravatar2 = "==1.4.2"
 django-markitup = {git = "https://github.com/zsiciarz/django-markitup/", ref = "django2.0"}
 django-nose = "==1.4.6"
-gunicorn = "==20.0.0"
+gunicorn = "==20.0.4"
 markdown = "==3.1.1"
 
 [requires]
