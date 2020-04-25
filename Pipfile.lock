@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8171e1c441420e8930eff1278fbe9fa0307b1dda4c3e119a5deffccc54417e07"
+            "sha256": "f9d4f44c3458afd4f0028b0596673fa641c76045cd764c3ab4b5c73cce29c414"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,11 +26,11 @@
         },
         "django-gravatar2": {
             "hashes": [
-                "sha256:46cd5cecf46d7c6155aa31badb2575f634fc6fe65ad73c2b711a2fee3b205be3",
-                "sha256:d6ec4ae679a8f4e4ea349259543fb1998e3415e08c3acd2b3648dd7466357204"
+                "sha256:545a6c2c5c624c7635dec29c7bc0be1a2cb89c9b8821af8616ae9838827cc35b",
+                "sha256:c813280967511ced93eea0359f60e5369c35b3311efe565c3e5d4ab35c10c9ee"
             ],
             "index": "pypi",
-            "version": "==1.4.2"
+            "version": "==1.4.4"
         },
         "django-markitup": {
             "git": "https://github.com/zsiciarz/django-markitup/",
@@ -77,10 +77,10 @@
         },
         "sqlparse": {
             "hashes": [
-                "sha256:40afe6b8d4b1117e7dff5504d7a8ce07d9a1b15aeeade8a2d10f130a834f8177",
-                "sha256:7c3dca29c022744e95b547e867cee89f4fce4373f3549ccd8797d8eb52cdb873"
+                "sha256:022fb9c87b524d1f7862b3037e541f68597a730a8843245c349fc93e1643dc4e",
+                "sha256:e162203737712307dfe78860cc56c8da8a852ab2ee33750e33aeadf38d12c548"
             ],
-            "version": "==0.3.0"
+            "version": "==0.3.1"
         }
     },
     "develop": {}
