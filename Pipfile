@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "==2.2.10"
+django = "==3.0.6"
 # djangospam = "==1.1.4"
 django-gravatar2 = "==1.4.4"
 django-markitup = {git = "https://github.com/zsiciarz/django-markitup/", ref = "django2.0"}
