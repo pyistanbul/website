@@ -10,7 +10,7 @@ django = "==2.2.13"
 # djangospam = "==1.1.4"
 django-gravatar2 = "==1.4.4"
 django-markitup = {git = "https://github.com/zsiciarz/django-markitup/", ref = "django2.0"}
-django-nose = "==1.4.6"
+django-nose = "==1.4.7"
 gunicorn = "==20.0.4"
 markdown = "==3.2.2"
 
