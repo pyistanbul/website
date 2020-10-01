@@ -1,8 +1,8 @@
-# Python Istanbul Website
+# Python Istanbul Stunning Website
 
 [![Build Status](https://travis-ci.org/pyistanbul/website.png?branch=master)](https://travis-ci.org/pyistanbul/website)
 
-## Installation
+## Let's Installation
 
 ```sh
 $ git clone https://github.com/pyistanbul/website.git
