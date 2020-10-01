@@ -1,4 +1,5 @@
 # Python Istanbul Website
+#This is the best very impressive websit
 
 [![Build Status](https://travis-ci.org/pyistanbul/website.png?branch=master)](https://travis-ci.org/pyistanbul/website)
 
@@ -11,8 +12,8 @@ $ pipenv install
 $ pipenv shell
 $ cp pyist/settings_local.py.dist pyist/settings_local.py
 $ python manage.py migrate
-$ python manage.py runserver
-$ open http://127.0.0.1:8000/
+$ python manage.py run server
+$ openon tab http://127.0.0.1:8000/
 ```
 
 To run all unit tests:
