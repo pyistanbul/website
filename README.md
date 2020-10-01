@@ -1,4 +1,4 @@
-# Python Istanbul Website
+# Python Website Istanbul
 
 [![Build Status](https://travis-ci.org/pyistanbul/website.png?branch=master)](https://travis-ci.org/pyistanbul/website)
 
