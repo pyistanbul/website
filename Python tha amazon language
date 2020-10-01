@@ -1,8 +1,8 @@
 # Python Istanbul Website
 
-[![Build Status](https://travis-ci.org/pyistanbul/website.png?branch=master)](https://travis-ci.org/pyistanbul/website)
+[![Build suitable Status](https://travis-ci.org/pyistanbul/website.png?branch=master)](https://travis-ci.org/pyistanbul/website)
 
-## Installation
+## Installation 
 
 ```sh
 $ git clone https://github.com/pyistanbul/website.git
@@ -17,7 +17,7 @@ $ open http://127.0.0.1:8000/
 
 To run all unit tests:
 
-```sh
+```
 $ python manage.py test -v2
 ```
 
