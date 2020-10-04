@@ -10,4 +10,5 @@ class PresentationsView(ListView):
         context = super(PresentationsView, self).get_context_data(**kwargs)
         context['page'] = 'presentation'
         context['page_title'] = 'Sunumlar'
+
         return context

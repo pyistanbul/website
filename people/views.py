@@ -21,4 +21,5 @@ class PeopleView(ListView):
         context = super(PeopleView, self).get_context_data(**kwargs)
         context['page'] = 'people'
         context['page_title'] = 'İnsanlar'
+
         return context
