@@ -1,4 +1,5 @@
 from django import template
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
@@ -16,7 +17,8 @@ def fontawesome(icon_name, size=""):
     """
     if len(size) > 0:
         size = "fa-%s" % size
-    return '<i class="fa fa-%s %s"></i>' % (icon_name, size)
+    result = '<i class="fa fa-%s %s"></i>' % (icon_name, size)
+    return mark_safe(result)
 
 
 register.simple_tag(fontawesome)

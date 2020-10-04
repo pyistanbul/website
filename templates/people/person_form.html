@@ -2,7 +2,6 @@
 
 {% block content %}
     <h3>Yeni kişi</h3>
-    {% include 'djangospam/cookieform.html' %}
     <form action="{% url "people:new" %}" method="post">
     {% csrf_token %}
     {% for field in form %}
