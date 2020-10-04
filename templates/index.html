@@ -1,32 +1,112 @@
 {% extends "base.html" %}
 
 {% block content %}
-<article>
-    {% for post in object_list %}
-       <div class="post">
-           <header>
-               <time>{{ post.created_at|date }}</time>
-               <h3><a href="{{ post.get_absolute_url }}">{{ post }}</a></h3>
-           </header>
-           {{ post.content_body|safe }}
-       </div>
-    {% endfor %}
-</article>
 
-<aside>
-    <h3>Python İstanbul nedir?</h3>
-    <p>
-        İstanbul'daki Python programcıları topluluğudur. Eğer Python
-        ilginizi çekiyorsa siz de bu topluluğa katılabilirsiniz.
-    </p>
-    <h3>Nasıl iletişim kurabilirim?</h3>
-    <p>Her gün Freenode'daki #pyistanbul kanalında buluşuyoruz.</p>
-    <h3>Desteğe ihtiyacım var</h3>
-    <p>IRC'de ya da python-istanbul e-posta listesinde sorularınızı sorabilirsiniz.</p>
-    <p><a href="http://groups.google.com/group/python-istanbul" class="button">Listeye Kaydol</a></p>
-    <p id="oreilly-ug">
-        <a href="http://oreilly.com/ug/"><img alt="O'Reilly User Groups"
-                                              src="http://oreilly.com/ug/banners/ug_ad_250_python.gif"></a>
-    </p>
-</aside>
+<div class="home">
+    <div class="no-event">
+        <div class="newsletter-title">HABERDAR OL</div>
+        <div class="newsletter-text">
+            Şu an planlanmış bir etkinliğimiz yok.
+            <span>Gelecekteki etkinliklerden anında haberdar olmak için eposta adresini bırak.</span>
+        </div>
+        <div class="newsletter-form clearfix">
+            <form>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email adresinizi girin">
+                </div>
+                <button>Gönder</button>
+            </form>
+        </div>
+        <div class="submit-info">E-posta listemize başarıyla kaydoldunuz.</div>
+    </div>
+</div>
+
+<div class="featured-events">
+    <div class="container">
+        <div class="row">
+            <div class="event-years">
+                <div class="sub-title">ETKİNLİK ARŞİVİ</div>
+                <ul class="years">
+                    <li class="active"><a href="#">2018</a></li>
+                    <li><a href="#">2017</a></li>
+                    <li><a href="#">2016</a></li>
+                    <li><a href="#">2015</a></li>
+                    <li><a href="#">2014</a></li>
+                    <li><a href="#">2013</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row event-box-title">GEÇMİŞ ETKİNLİKLER</div>
+        <div class="row event-boxes">
+            <div class="event-box">
+                <div class="row">
+                    <div class="col-md-4 no-padding">
+                        <img src="http://lorempixel.com/150/150/" alt="">
+                    </div>
+                    <div class="col-md-4 no-padding">
+                        <img src="http://lorempixel.com/150/150/" alt="">
+                    </div>
+                    <div class="col-md-4 no-padding">
+                        <img src="http://lorempixel.com/150/150/" alt="">
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="date">
+                        11 TEMMUZ 2015, ÇARŞAMBA
+                    </div>
+                    <div class="event-title">
+                        Pyİstanbul 11 Temmuz Etkinliği
+                    </div>
+                    <div>
+                        <div class="location">
+                            <a href="#">
+                                Prisync
+                            </a>
+                        </div>
+                        <div class="detail">
+                            <a href="#">
+                                Detaylar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-box">
+                <div class="row">
+                    <div class="col-md-4 no-padding">
+                        <img src="http://lorempixel.com/150/150/" alt="">
+                    </div>
+                    <div class="col-md-4 no-padding">
+                        <img src="http://lorempixel.com/150/150/" alt="">
+                    </div>
+                    <div class="col-md-4 no-padding">
+                        <img src="http://lorempixel.com/150/150/" alt="">
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="date">
+                        11 TEMMUZ 2015, ÇARŞAMBA
+                    </div>
+                    <div class="event-title">
+                        Pyİstanbul 11 Temmuz Etkinliği
+                    </div>
+                    <div>
+                        <div class="location">
+                            <a href="#">
+                                Prisync
+                            </a>
+                        </div>
+                        <div class="detail">
+                            <a href="#">
+                                Detaylar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
+

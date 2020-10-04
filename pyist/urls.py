@@ -1,28 +1,32 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
+from django.urls import path
 from django.contrib import admin
+from django.contrib.sitemaps.views import index, sitemap
+from django.urls import include, path
 
-from radpress.views import ArticleListView, ArticleDetailView
+from django.conf import settings
+from django.conf.urls.static import static
 
+from blog.sitemap import BlogSitemap
 
 admin.autodiscover()
 
-urlpatterns = patterns(
-    '',
+sitemaps = {
+    'blog': BlogSitemap,
+}
 
+urlpatterns = [
     # apps
-    url(r'^people/', include('people.urls', namespace="people")),
-    url(r'^jobs/', include('jobs.urls', namespace="jobs")),
-    url(r'^presentations/', include('presentations.urls',
-                                    namespace="presentations")),
+    path('', include('blog.urls', namespace="blog")),
+    path('people/', include('people.urls')),
+    path('presentations/', include('presentations.urls')),
+    path('sitemap.xml', index, {'sitemaps': sitemaps}),
+    # path('sitemap-(?P<section>.+)\.xml$', sitemap, {'sitemaps': sitemaps}),
+    path('sitemap-<section>.xml', sitemap, {'sitemaps': sitemaps}),
 
     # third party apps
-    url(r'^$', ArticleListView.as_view(template_name="index.html"),
-        name='home'),
-    url(r'^blog/', include('radpress.urls')),
-    url(r'^blog/(?P<slug>[-\w]+)$', view=ArticleDetailView.as_view(),
-        name='radpress-article-detail'),  # overrides radpress detail url
-    url(r'^comments/', include('djangospam.cookie.urls')),
+    # path(r'^comments/', include('djangospam.cookie.urls')),
 
     # admin
-    url(r'^admin/', include(admin.site.urls)),
-)
+    path('admin/', admin.site.urls),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

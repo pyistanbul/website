@@ -1,9 +1,8 @@
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
-from django.utils.unittest.case import skip
 
-from people.models import Person
+from .models import Person
 
 
 class PeopleTest(TestCase):
@@ -13,7 +12,8 @@ class PeopleTest(TestCase):
         'email': 'edi@budu.com',
         'blog_link': 'http://edibudu.com',
         'twitter_username': 'edibudu',
-        'github_username': 'edicat'
+        'github_username': 'edicat',
+        'is_active': True,
     }
 
     def setUp(self):
@@ -27,7 +27,7 @@ class PeopleTest(TestCase):
         person = Person.objects.get()
         self.assertEqual(person.name, 'edi budu')
         self.assertEqual(person.email, 'edi@budu.com')
-        self.assertEqual(person.blog_link, 'http://edibudu.com/')
+        self.assertEqual(person.blog_link, 'http://edibudu.com')
         self.assertEqual(person.twitter_username, 'edibudu')
         self.assertEqual(person.github_username, 'edicat')
 
@@ -36,7 +36,6 @@ class PeopleTest(TestCase):
         response = self.client.get(reverse('people:index'))
         self.assertContains(response, "edi budu")
 
-    @skip('Confirmation disabled for now')
     def test_active_listing(self):
         person = self.person.copy()
         person['is_active'] = False

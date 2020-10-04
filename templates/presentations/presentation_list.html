@@ -1,24 +1,52 @@
-{% extends "base.html" %}
+{% extends "base_page.html" %}
 
-{% load gravatar_tags %}
 
-{% block content %}
+{% block page %}
+    <div class="events top-shift">
+        <div class="row">
+            <div class="card-columns">
+                {% regroup presentation_list by date as presentations %}
+                {% for date in presentations %}
+                <div class="event card">
+                    <div class="card-body">
+                        <div class="event-title">Pyİstanbul 11 Temmuz Etkinliği</div>
+                        <!-- 
+                        TODO: Profile entegrasyonu sonrasi burasinin duzenlenmesi gerekiyor
 
-    {% regroup presentation_list by date as presentations %}
-
-    <div class="presentations">
-        {% for date in presentations %}
-            <h3><time datetime="{{ date.grouper|date:"c" }}">{{ date.grouper }}</time></h3>
-            <ul>
-            {% for presentation in date.list %}
-                <li>
-                    <a href="{{ presentation.link }}" target="_blank">
-                        <span>{{ presentation.owner }}</span>
-                        {{ presentation.title }}
-                    </a></li>
-            {% endfor %}
-            </ul>
-        {% endfor %}
+                        <div class="speakers">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid logo" src="http://lorempixel.com/86/86/people/">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid logo" src="http://lorempixel.com/86/86/people/">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid logo" src="http://lorempixel.com/86/86/people/">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        -->
+                        <div class="presentations">
+                            {% for presentation in date.list %}
+                            <div class="presentation">
+                                <a href="{{ presentation.link }}" target="_blank">
+                                    <div class="presentation-title">{{ presentation.title }}</div>
+                                </a>
+                                <div class="speaker-name">{{ presentation.owner }}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-
 {% endblock %}

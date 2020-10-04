@@ -2,7 +2,7 @@
 
 from contextlib import contextmanager
 
-from fabric.api import cd, env, get, local, put, run, sudo, prefix
+from fabric.api import cd, env, local, run, sudo, prefix
 
 try:
     from fabenv import env
@@ -22,7 +22,7 @@ def deploy():
     with venv():
         run('git pull')
         update_dependencies()
-
+        run('python manage.py migrate')
     update_static()
     restart()
     restart_nginx()
@@ -30,7 +30,7 @@ def deploy():
 
 def start():
     with venv():
-        run('gunicorn_django -c conf/gunicorn.py')
+        run('gunicorn -c conf/gunicorn.py pyist.wsgi:application')
 
     restart_nginx()
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from presentations.models import Presentation
+from .models import Presentation
 
 
 admin.site.register(Presentation)

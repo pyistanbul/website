@@ -9,3 +9,4 @@ static/
 *.pyc
 *~
 .DS_Store
+.coverage
