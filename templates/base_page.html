@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block cover %}
+<div class="cover">
+	<div class="container">
+		<div class="row">
+			<h2>{% if page_title %}{{ page_title }}{% endif %}</h2>
+		</div>
+	</div>
+</div>
+{% endblock cover %}
+
+{% block content %}
+<div class="page">
+	<div class="container">
+		{% block page %}
+	    {% endblock page %}
+	</div>
+</div>
+{% endblock content %}
