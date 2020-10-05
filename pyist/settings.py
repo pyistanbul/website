@@ -15,7 +15,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 TIME_ZONE = 'Europe/Istanbul'
-LANGUAGE_CODE = 'TR-tr'
+LANGUAGE_CODE = 'tr-tr'
 SITE_ID = 1
 
 USE_I18N = True
