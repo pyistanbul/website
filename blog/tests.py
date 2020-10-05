@@ -7,15 +7,23 @@ from .models import Post
 class PostModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        test_user = User.objects.create(username='testuser', password='123456')
-        test_user.save()
-        post = Post.objects.create(author=test_user, title="Hello Blog",
-                                   slug="hello-blog",
-                                   description="First Blog Post Hede")
+        # FIXME: Replace with model factory
+        user = User.objects.create(
+            username="testuser",
+            password="123456",
+        )
+
+        # FIXME: Replace with model factory
+        Post.objects.create(
+            author=user,
+            title="Hello Blog",
+            slug="hello-blog",
+            description="First Blog Post Hede"
+        )
 
     def test_get_absolute_url(self):
         post = Post.objects.get(id=1)
-        self.assertEquals(post.get_absolute_url(), '/blog/hello-blog')
+        self.assertEquals(post.get_absolute_url(), '/blog/hello-blog/')
 
     def test_title_max_length(self):
         post = Post.objects.get(id=1)

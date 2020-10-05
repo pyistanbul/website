@@ -45,7 +45,6 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    {% include 'djangospam/cookieform.html' %}
                     <form action="{% url 'people:index' %}" method="post">
                         {% csrf_token %}
                         <div class="form-group">

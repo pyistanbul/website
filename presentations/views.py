@@ -7,8 +7,9 @@ class PresentationsView(ListView):
     model = Presentation
 
     def get_context_data(self, **kwargs):
-        context = super(PresentationsView, self).get_context_data(**kwargs)
-        context['page'] = 'presentation'
-        context['page_title'] = 'Sunumlar'
+        context = super().get_context_data(**kwargs)
+
+        context["page"] = "presentation"
+        context["page_title"] = "Sunumlar"
 
         return context

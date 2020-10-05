@@ -7,10 +7,6 @@ from people.models import Person
 
 class PeopleView(ListView):
     queryset = Person.objects.active()
-
-
-class PeopleView(ListView):
-    model = Person
     form_class = PersonForm
     success_message = 'Kişi başarıyla eklendi.'
 
@@ -18,8 +14,9 @@ class PeopleView(ListView):
         return reverse("people:index")
 
     def get_context_data(self, **kwargs):
-        context = super(PeopleView, self).get_context_data(**kwargs)
-        context['page'] = 'people'
-        context['page_title'] = 'İnsanlar'
+        context = super().get_context_data(**kwargs)
+
+        context["page"] = "people"
+        context["page_title"] = "İnsanlar"
 
         return context
