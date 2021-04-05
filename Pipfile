@@ -11,7 +11,7 @@ django = "==3.1.7"
 django-gravatar2 = "==1.4.4"
 django-markitup = "==4.0.0"
 django-nose = "==1.4.7"
-gunicorn = "==20.0.4"
+gunicorn = "==20.1.0"
 markdown = "==3.3.4"
 
 [requires]
