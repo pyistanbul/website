@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "763697b355e7493df66d8debca5ea7dffd598a75ea0cf9e8de5ae754de5a7b67"
+            "sha256": "7944080a481948522d00b37c56c53b8b11a8404f24f7ec7a3b3328cfad3c975b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -21,16 +21,15 @@
                 "sha256:34103fa20270d8843a66e5df18547d2e8139534d23e3beffe96647c65ddffd4d",
                 "sha256:c62b616b226d6c2e927b0225f8101f9e2cca08112cff98839ca6726c129ff9e0"
             ],
-            "index": "pypi",
             "version": "==3.3.2"
         },
         "django": {
             "hashes": [
-                "sha256:32ce792ee9b6a0cbbec340123e229ac9f765dff8c2a4ae9247a14b2ba3a365a7",
-                "sha256:baf099db36ad31f970775d0be5587cc58a6256a6771a44eb795b554d45f211b8"
+                "sha256:c348b3ddc452bf4b62361f0752f71a339140c777ebea3cdaaaa8fdb7f417a862",
+                "sha256:f8393103e15ec2d2d313ccbb95a3f1da092f9f58d74ac1c61ca2ac0436ae1eac"
             ],
             "index": "pypi",
-            "version": "==3.1.7"
+            "version": "==3.1.8"
         },
         "django-gravatar2": {
             "hashes": [
